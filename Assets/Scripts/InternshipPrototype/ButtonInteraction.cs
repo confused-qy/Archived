@@ -8,12 +8,15 @@ namespace EmployeeHandbook
     [RequireComponent(typeof(Button))]
     public class ButtonInteraction : MonoBehaviour
     {
+        private const float DoubleClickWindow = 0.35f;
+
         [SerializeField] private Button button;
         [SerializeField] private Text buttonLabel;
         [SerializeField] private WarningDialog warningDialog;
 
         private WorkTaskData task;
         private Action<WorkTaskData> action;
+        private float lastClickTime = -1f;
 
         private void Reset()
         {
@@ -41,6 +44,15 @@ namespace EmployeeHandbook
 
         private void HandleClick()
         {
+            float clickTime = Time.unscaledTime;
+            bool isDoubleClick = clickTime - lastClickTime <= DoubleClickWindow;
+            lastClickTime = clickTime;
+
+            if (!isDoubleClick)
+                return;
+
+            lastClickTime = -1f;
+
             if (task == null || action == null)
                 return;
 

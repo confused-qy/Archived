@@ -1,0 +1,634 @@
+{
+  "tasks": [
+    {
+      "day": 1,
+      "taskId": "D01_M01",
+      "taskName": "阅读邮件",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 1,
+      "taskId": "D01_M02",
+      "taskName": "删除旧文件夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 1,
+      "taskId": "D01_M03",
+      "taskName": "填写档案表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 2,
+      "taskId": "D02_M01",
+      "taskName": "阅读通知",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 2,
+      "taskId": "D02_M02",
+      "taskName": "填写周报",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 2,
+      "taskId": "D02_M03",
+      "taskName": "更新表格",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 3,
+      "taskId": "D03_M01",
+      "taskName": "阅读公告",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 3,
+      "taskId": "D03_M02",
+      "taskName": "删除临时夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 3,
+      "taskId": "D03_M03",
+      "taskName": "填写日报",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 4,
+      "taskId": "D04_M01",
+      "taskName": "阅读邮件",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 4,
+      "taskId": "D04_M02",
+      "taskName": "整理表格",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 4,
+      "taskId": "D04_M03",
+      "taskName": "删除缓存夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 5,
+      "taskId": "D05_M01",
+      "taskName": "阅读提醒",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 5,
+      "taskId": "D05_M02",
+      "taskName": "填写考勤表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 5,
+      "taskId": "D05_M03",
+      "taskName": "提交总结",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 6,
+      "taskId": "D06_M01",
+      "taskName": "阅读周信",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 6,
+      "taskId": "D06_M02",
+      "taskName": "删除过期夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 6,
+      "taskId": "D06_M03",
+      "taskName": "更新进度表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 7,
+      "taskId": "D07_M01",
+      "taskName": "阅读制度",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 7,
+      "taskId": "D07_M02",
+      "taskName": "填写培训表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 7,
+      "taskId": "D07_M03",
+      "taskName": "整理文档",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 8,
+      "taskId": "D08_M01",
+      "taskName": "阅读邮件",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 8,
+      "taskId": "D08_M02",
+      "taskName": "删除备份夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 8,
+      "taskId": "D08_M03",
+      "taskName": "填写记录表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 9,
+      "taskId": "D09_M01",
+      "taskName": "阅读通知",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 9,
+      "taskId": "D09_M02",
+      "taskName": "填写会议纪要",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 9,
+      "taskId": "D09_M03",
+      "taskName": "更新名单表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 10,
+      "taskId": "D10_M01",
+      "taskName": "阅读公告",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 10,
+      "taskId": "D10_M02",
+      "taskName": "删除旧素材",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 10,
+      "taskId": "D10_M03",
+      "taskName": "提交周报",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 11,
+      "taskId": "D11_M01",
+      "taskName": "阅读提醒",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 11,
+      "taskId": "D11_M02",
+      "taskName": "填写预算表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 11,
+      "taskId": "D11_M03",
+      "taskName": "整理报告",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 12,
+      "taskId": "D12_M01",
+      "taskName": "阅读邮件",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 12,
+      "taskId": "D12_M02",
+      "taskName": "删除日志夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 12,
+      "taskId": "D12_M03",
+      "taskName": "更新排班表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 13,
+      "taskId": "D13_M01",
+      "taskName": "阅读通知",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 13,
+      "taskId": "D13_M02",
+      "taskName": "填写申请表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 13,
+      "taskId": "D13_M03",
+      "taskName": "编辑文档",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 14,
+      "taskId": "D14_M01",
+      "taskName": "阅读制度",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 14,
+      "taskId": "D14_M02",
+      "taskName": "删除测试夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 14,
+      "taskId": "D14_M03",
+      "taskName": "填写统计表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 15,
+      "taskId": "D15_M01",
+      "taskName": "阅读周信",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 15,
+      "taskId": "D15_M02",
+      "taskName": "提交月报",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 15,
+      "taskId": "D15_M03",
+      "taskName": "更新汇总表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 16,
+      "taskId": "D16_M01",
+      "taskName": "阅读邮件",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 16,
+      "taskId": "D16_M02",
+      "taskName": "删除归档夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 16,
+      "taskId": "D16_M03",
+      "taskName": "填写复盘表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 17,
+      "taskId": "D17_M01",
+      "taskName": "阅读公告",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 17,
+      "taskId": "D17_M02",
+      "taskName": "整理方案",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 17,
+      "taskId": "D17_M03",
+      "taskName": "更新资产表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 18,
+      "taskId": "D18_M01",
+      "taskName": "阅读提醒",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 18,
+      "taskId": "D18_M02",
+      "taskName": "删除废稿夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 18,
+      "taskId": "D18_M03",
+      "taskName": "填写巡检表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 19,
+      "taskId": "D19_M01",
+      "taskName": "阅读通知",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 19,
+      "taskId": "D19_M02",
+      "taskName": "提交简报",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 19,
+      "taskId": "D19_M03",
+      "taskName": "整理数据表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 20,
+      "taskId": "D20_M01",
+      "taskName": "阅读邮件",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 20,
+      "taskId": "D20_M02",
+      "taskName": "删除临时文件",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 20,
+      "taskId": "D20_M03",
+      "taskName": "填写考核表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 21,
+      "taskId": "D21_M01",
+      "taskName": "阅读制度",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 21,
+      "taskId": "D21_M02",
+      "taskName": "整理周报",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 21,
+      "taskId": "D21_M03",
+      "taskName": "更新通讯录",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 22,
+      "taskId": "D22_M01",
+      "taskName": "阅读周信",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 22,
+      "taskId": "D22_M02",
+      "taskName": "删除旧模板",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 22,
+      "taskId": "D22_M03",
+      "taskName": "填写采购表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 23,
+      "taskId": "D23_M01",
+      "taskName": "阅读公告",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 23,
+      "taskId": "D23_M02",
+      "taskName": "编辑总结",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 23,
+      "taskId": "D23_M03",
+      "taskName": "更新费用表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 24,
+      "taskId": "D24_M01",
+      "taskName": "阅读提醒",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 24,
+      "taskId": "D24_M02",
+      "taskName": "删除无用夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 24,
+      "taskId": "D24_M03",
+      "taskName": "填写清单表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 25,
+      "taskId": "D25_M01",
+      "taskName": "阅读邮件",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 25,
+      "taskId": "D25_M02",
+      "taskName": "提交阶段总结",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 25,
+      "taskId": "D25_M03",
+      "taskName": "更新培训表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 26,
+      "taskId": "D26_M01",
+      "taskName": "阅读通知",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 26,
+      "taskId": "D26_M02",
+      "taskName": "删除旧报告",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 26,
+      "taskId": "D26_M03",
+      "taskName": "填写工时表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 27,
+      "taskId": "D27_M01",
+      "taskName": "阅读公告",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 27,
+      "taskId": "D27_M02",
+      "taskName": "整理汇报",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 27,
+      "taskId": "D27_M03",
+      "taskName": "更新库存表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 28,
+      "taskId": "D28_M01",
+      "taskName": "阅读制度",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 28,
+      "taskId": "D28_M02",
+      "taskName": "删除临时夹",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 28,
+      "taskId": "D28_M03",
+      "taskName": "填写验收表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 29,
+      "taskId": "D29_M01",
+      "taskName": "阅读提醒",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 29,
+      "taskId": "D29_M02",
+      "taskName": "提交交接文档",
+      "taskType": "WordFill",
+      "required": true
+    },
+    {
+      "day": 29,
+      "taskId": "D29_M03",
+      "taskName": "更新交接表",
+      "taskType": "ExcelFill",
+      "required": true
+    },
+    {
+      "day": 30,
+      "taskId": "D30_M01",
+      "taskName": "阅读终期邮件",
+      "taskType": "EmailRead",
+      "required": true
+    },
+    {
+      "day": 30,
+      "taskId": "D30_M02",
+      "taskName": "删除实习文件",
+      "taskType": "DeleteFolder",
+      "required": true
+    },
+    {
+      "day": 30,
+      "taskId": "D30_M03",
+      "taskName": "提交最终报告",
+      "taskType": "WordFill",
+      "required": true
+    }
+  ]
+}

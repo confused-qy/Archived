@@ -8,8 +8,10 @@ public class WindowController : MonoBehaviour
 {
     private const float DoubleClickWindow = 0.35f;
     private const string DesktopButtonsName = "DesktopButtons";
+    private const string DailyTasksName = "DailyTasks";
 
     [SerializeField] private GameObject windowPanel;
+    [SerializeField] private GameObject[] alwaysVisibleObjects;
 
     private float lastOpenClickTime = -1f;
     private GameObject lastOpenClickTarget;
@@ -27,11 +29,21 @@ public class WindowController : MonoBehaviour
 
     public void OpenWindowOnDoubleClick()
     {
-        if (RegisterDoubleClick(windowPanel))
-            OpenWindow();
+        OpenSelectedWindow(windowPanel);
     }
 
     public void OpenSelectedWindow(GameObject targetWindow)
+    {
+        if (RegisterDoubleClick(targetWindow))
+            ShowSelectedWindow(targetWindow);
+    }
+
+    public void OpenSelectedWindowOnDoubleClick(GameObject targetWindow)
+    {
+        OpenSelectedWindow(targetWindow);
+    }
+
+    private void ShowSelectedWindow(GameObject targetWindow)
     {
         if (targetWindow == null)
             return;
@@ -42,12 +54,6 @@ public class WindowController : MonoBehaviour
         currentSelectedWindow = FindDesktopWindow(targetWindow);
         currentSelectedWindow.SetActive(true);
         currentSelectedWindow.transform.SetAsLastSibling();
-    }
-
-    public void OpenSelectedWindowOnDoubleClick(GameObject targetWindow)
-    {
-        if (RegisterDoubleClick(targetWindow))
-            OpenSelectedWindow(targetWindow);
     }
 
     public void CloseWindow()
@@ -76,11 +82,39 @@ public class WindowController : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            if (child.name == DesktopButtonsName)
+            if (ShouldKeepVisible(child))
+            {
+                child.gameObject.SetActive(true);
                 continue;
+            }
 
             child.gameObject.SetActive(false);
         }
+    }
+
+    private bool ShouldKeepVisible(Transform child)
+    {
+        if (child == null)
+            return false;
+
+        string childName = child.name.Trim();
+        if (childName == DesktopButtonsName || childName == DailyTasksName || childName.Contains(DailyTasksName))
+            return true;
+
+        if (alwaysVisibleObjects == null)
+            return false;
+
+        for (int i = 0; i < alwaysVisibleObjects.Length; i++)
+        {
+            GameObject alwaysVisibleObject = alwaysVisibleObjects[i];
+            if (alwaysVisibleObject == null)
+                continue;
+
+            if (alwaysVisibleObject == child.gameObject || alwaysVisibleObject.transform.IsChildOf(child))
+                return true;
+        }
+
+        return false;
     }
 
     private GameObject FindDesktopWindow(GameObject targetWindow)

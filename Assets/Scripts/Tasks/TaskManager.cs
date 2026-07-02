@@ -11,6 +11,7 @@ namespace EmployeeHandbook.DailyTasks
     {
         [SerializeField] private string tasksResourcePath = "tasks";
         [SerializeField] private int tasksPerDay = 3;
+        [SerializeField] private int noTaskDayStart = 17;
 
         private readonly List<TaskData> allTasks = new List<TaskData>();
         private PlayerState playerState;
@@ -108,7 +109,10 @@ namespace EmployeeHandbook.DailyTasks
             }
 
             if (todayTasks.Count < tasksPerDay)
-                Debug.LogWarning("第 " + playerState.currentDay + " 天任务不足 " + tasksPerDay + " 个，当前只有 " + todayTasks.Count + " 个。");
+            {
+                if (!IsNoTaskDay())
+                    Debug.LogWarning("第 " + playerState.currentDay + " 天任务不足 " + tasksPerDay + " 个，当前只有 " + todayTasks.Count + " 个。");
+            }
 
             return todayTasks;
         }
@@ -204,6 +208,9 @@ namespace EmployeeHandbook.DailyTasks
             List<TaskData> todayTasks = GetTodayTasks();
             if (todayTasks.Count == 0)
             {
+                if (IsNoTaskDay())
+                    return true;
+
                 Debug.LogWarning("今天没有生成任务，不能进入下一天。");
                 return false;
             }
@@ -268,6 +275,11 @@ namespace EmployeeHandbook.DailyTasks
             }
 
             return false;
+        }
+
+        public bool IsNoTaskDay()
+        {
+            return playerState != null && playerState.currentDay >= noTaskDayStart;
         }
 
         private void RefreshCompletedFlags()

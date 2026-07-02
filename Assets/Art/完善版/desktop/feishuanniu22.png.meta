@@ -1,0 +1,1664 @@
+fileFormatVersion: 2
+guid: 17dd943ae62a9486bbb41f6bd0c9b577
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8059347214610843802
+    second: feishuanniu22_0
+  - first:
+      213: 8632835843715251035
+    second: feishuanniu22_1
+  - first:
+      213: 3338980950746620479
+    second: feishuanniu22_2
+  - first:
+      213: -5030365941120091564
+    second: feishuanniu22_3
+  - first:
+      213: 3426014085665851948
+    second: feishuanniu22_4
+  - first:
+      213: 7149428558935633755
+    second: feishuanniu22_5
+  - first:
+      213: -5288963935895470900
+    second: feishuanniu22_6
+  - first:
+      213: 2237522686420769355
+    second: feishuanniu22_7
+  - first:
+      213: -809840834465359770
+    second: feishuanniu22_8
+  - first:
+      213: -3687759501413760043
+    second: feishuanniu22_9
+  - first:
+      213: -8374477435349805153
+    second: feishuanniu22_10
+  - first:
+      213: -75635539346684438
+    second: feishuanniu22_11
+  - first:
+      213: 988697457136997641
+    second: feishuanniu22_12
+  - first:
+      213: 6777976250770586768
+    second: feishuanniu22_13
+  - first:
+      213: 7576060727944851238
+    second: feishuanniu22_14
+  - first:
+      213: 4264790908106744005
+    second: feishuanniu22_15
+  - first:
+      213: 5026424056236333579
+    second: feishuanniu22_16
+  - first:
+      213: -841863795228485094
+    second: feishuanniu22_17
+  - first:
+      213: -3409719869878947979
+    second: feishuanniu22_18
+  - first:
+      213: -7762275079216140864
+    second: feishuanniu22_19
+  - first:
+      213: -7752953209947883555
+    second: feishuanniu22_20
+  - first:
+      213: 6184706649734977361
+    second: feishuanniu22_21
+  - first:
+      213: 827409570816638360
+    second: feishuanniu22_22
+  - first:
+      213: -1860279574397840519
+    second: feishuanniu22_23
+  - first:
+      213: 4098231095104609774
+    second: feishuanniu22_24
+  - first:
+      213: -8096611152929322331
+    second: feishuanniu22_25
+  - first:
+      213: -956868007058244339
+    second: feishuanniu22_26
+  - first:
+      213: -3320169380608100015
+    second: feishuanniu22_27
+  - first:
+      213: 7279696726545379788
+    second: feishuanniu22_28
+  - first:
+      213: -1849430731979007123
+    second: feishuanniu22_29
+  - first:
+      213: -8637305937906266406
+    second: feishuanniu22_30
+  - first:
+      213: 1707490966464484966
+    second: feishuanniu22_31
+  - first:
+      213: -4485591391619104061
+    second: feishuanniu22_32
+  - first:
+      213: 4179089503081908612
+    second: feishuanniu22_33
+  - first:
+      213: -8729424107277013702
+    second: feishuanniu22_34
+  - first:
+      213: -6508797110808740120
+    second: feishuanniu22_35
+  - first:
+      213: -5219914193289182184
+    second: feishuanniu22_36
+  - first:
+      213: 4894613933232707828
+    second: feishuanniu22_37
+  - first:
+      213: -804245477043077061
+    second: feishuanniu22_38
+  - first:
+      213: -5374306626392133868
+    second: feishuanniu22_39
+  - first:
+      213: 216310882777574927
+    second: feishuanniu22_40
+  - first:
+      213: -2814171212121783951
+    second: feishuanniu22_41
+  - first:
+      213: -8749165609570560141
+    second: feishuanniu22_42
+  - first:
+      213: 5235189741730377241
+    second: feishuanniu22_43
+  - first:
+      213: -3588792040104055204
+    second: feishuanniu22_44
+  - first:
+      213: -4251140476648562216
+    second: feishuanniu22_45
+  - first:
+      213: 6302410005920306583
+    second: feishuanniu22_46
+  - first:
+      213: 7423080005947287016
+    second: feishuanniu22_47
+  - first:
+      213: 4252163121343440813
+    second: feishuanniu22_48
+  - first:
+      213: 9063420013587837526
+    second: feishuanniu22_49
+  - first:
+      213: 5625108821867038270
+    second: feishuanniu22_50
+  - first:
+      213: -926608763353110427
+    second: feishuanniu22_51
+  - first:
+      213: -3053200310162123926
+    second: feishuanniu22_52
+  - first:
+      213: -6386888971950150374
+    second: feishuanniu22_53
+  - first:
+      213: 9167628993043398621
+    second: feishuanniu22_54
+  - first:
+      213: 3003560766331751744
+    second: feishuanniu22_55
+  - first:
+      213: -2956570835576080007
+    second: feishuanniu22_56
+  - first:
+      213: 5205937132726020181
+    second: feishuanniu22_57
+  - first:
+      213: -2094740322564590658
+    second: feishuanniu22_58
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: feishuanniu22_0
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 717
+        width: 482
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98c968679d88df60800000000000000
+      internalID: 8059347214610843802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_1
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 735
+        width: 160
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5b38ec067efdc770800000000000000
+      internalID: 8632835843715251035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_2
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 737
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f326c09eb71765e20800000000000000
+      internalID: 3338980950746620479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_3
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 752
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a305d14dc803ab0800000000000000
+      internalID: -5030365941120091564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_4
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 735
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a099bb8a5ab8f20800000000000000
+      internalID: 3426014085665851948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_5
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 735
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f2462256fd73360800000000000000
+      internalID: 7149428558935633755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_6
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 662
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc391b8253d996b0800000000000000
+      internalID: -5288963935895470900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_7
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 663
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4adcf447074d0f10800000000000000
+      internalID: 2237522686420769355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_8
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 664
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66816114d0ed2c4f0800000000000000
+      internalID: -809840834465359770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_9
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 664
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d34925a54272dcc0800000000000000
+      internalID: -3687759501413760043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_10
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 663
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9753767421e7cb80800000000000000
+      internalID: -8374477435349805153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_11
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 664
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae588d0b0e943fef0800000000000000
+      internalID: -75635539346684438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_12
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 663
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9059bf2591f88bd00800000000000000
+      internalID: 988697457136997641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_13
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 663
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09cf6332d75301e50800000000000000
+      internalID: 6777976250770586768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_14
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 594
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fa0f5a713932960800000000000000
+      internalID: 7576060727944851238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_15
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 594
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0a40f2cb49f2b30800000000000000
+      internalID: 4264790908106744005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_16
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 593
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ad17a4c0271c540800000000000000
+      internalID: 5026424056236333579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_17
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 594
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1ad420b6591154f0800000000000000
+      internalID: -841863795228485094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_18
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 593
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f264408dd3ea0d0800000000000000
+      internalID: -3409719869878947979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_19
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 594
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd647611fbd64490800000000000000
+      internalID: -7762275079216140864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_20
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 594
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7f4d8e12af76490800000000000000
+      internalID: -7752953209947883555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_21
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 594
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15713711eed74d550800000000000000
+      internalID: 6184706649734977361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_22
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 594
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89db840fe9c8b7b00800000000000000
+      internalID: 827409570816638360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_23
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 594
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9731a115595fe26e0800000000000000
+      internalID: -1860279574397840519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_24
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 593
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eed9b27b777dfd830800000000000000
+      internalID: 4098231095104609774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_25
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 525
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa8e29dd0f03af80800000000000000
+      internalID: -8096611152929322331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_26
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 525
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d7b560e9588b2f0800000000000000
+      internalID: -956868007058244339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_27
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 525
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159b9b21a836ce1d0800000000000000
+      internalID: -3320169380608100015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_28
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 524
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc1bf427a9da60560800000000000000
+      internalID: 7279696726545379788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_29
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 525
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b53b74c808556e0800000000000000
+      internalID: -1849430731979007123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_30
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 524
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade89ba0300222880800000000000000
+      internalID: -8637305937906266406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_31
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 525
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666dd41ccf932b710800000000000000
+      internalID: 1707490966464484966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_32
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 525
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c24efe156affb1c0800000000000000
+      internalID: -4485591391619104061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_33
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 525
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489c2c3e2cb1ff930800000000000000
+      internalID: 4179089503081908612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_34
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 524
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3da500660bdad680800000000000000
+      internalID: -8729424107277013702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_35
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 525
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eef727438b1ca5a0800000000000000
+      internalID: -6508797110808740120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_36
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 524
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8148afe82b32f87b0800000000000000
+      internalID: -5219914193289182184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_37
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 525
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8530380792de340800000000000000
+      internalID: 4894613933232707828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_38
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 524
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3002aceffeb6d4f0800000000000000
+      internalID: -804245477043077061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_39
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 457
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f6edbf890aa65b0800000000000000
+      internalID: -5374306626392133868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_40
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 457
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0e22011a9d700300800000000000000
+      internalID: 216310882777574927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_41
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 457
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171c954513e02f8d0800000000000000
+      internalID: -2814171212121783951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_42
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 457
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3779b70bb38b49680800000000000000
+      internalID: -8749165609570560141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_43
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 457
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91eab97355127a840800000000000000
+      internalID: 5235189741730377241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_44
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 456
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5e29dc57ac023ec0800000000000000
+      internalID: -3588792040104055204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_45
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 457
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d1e31f824ae005c0800000000000000
+      internalID: -4251140476648562216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_46
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 457
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7955fbf3288a67750800000000000000
+      internalID: 6302410005920306583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_47
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 457
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5eacdafe3140760800000000000000
+      internalID: 7423080005947287016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_48
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 456
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da721b674d7b20b30800000000000000
+      internalID: 4252163121343440813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_49
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 457
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652b1187b7cb7cd70800000000000000
+      internalID: 9063420013587837526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_50
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 456
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e360d4e9ba6601e40800000000000000
+      internalID: 5625108821867038270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_51
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 457
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 568e2963d360423f0800000000000000
+      internalID: -926608763353110427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_52
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 457
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a639ca49e7ad0a5d0800000000000000
+      internalID: -3053200310162123926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_53
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 388
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d2d07b1563d57a0800000000000000
+      internalID: -6386888971950150374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_54
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 387
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddf7cea3ff5f93f70800000000000000
+      internalID: 9167628993043398621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_55
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 388
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d018a7a9acea920800000000000000
+      internalID: 3003560766331751744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_56
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 387
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97935385d7628f6d0800000000000000
+      internalID: -2956570835576080007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_57
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 387
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558662f6d343f3840800000000000000
+      internalID: 5205937132726020181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feishuanniu22_58
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 387
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb3b9d866ccfde2e0800000000000000
+      internalID: -2094740322564590658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      feishuanniu22_0: 8059347214610843802
+      feishuanniu22_1: 8632835843715251035
+      feishuanniu22_10: -8374477435349805153
+      feishuanniu22_11: -75635539346684438
+      feishuanniu22_12: 988697457136997641
+      feishuanniu22_13: 6777976250770586768
+      feishuanniu22_14: 7576060727944851238
+      feishuanniu22_15: 4264790908106744005
+      feishuanniu22_16: 5026424056236333579
+      feishuanniu22_17: -841863795228485094
+      feishuanniu22_18: -3409719869878947979
+      feishuanniu22_19: -7762275079216140864
+      feishuanniu22_2: 3338980950746620479
+      feishuanniu22_20: -7752953209947883555
+      feishuanniu22_21: 6184706649734977361
+      feishuanniu22_22: 827409570816638360
+      feishuanniu22_23: -1860279574397840519
+      feishuanniu22_24: 4098231095104609774
+      feishuanniu22_25: -8096611152929322331
+      feishuanniu22_26: -956868007058244339
+      feishuanniu22_27: -3320169380608100015
+      feishuanniu22_28: 7279696726545379788
+      feishuanniu22_29: -1849430731979007123
+      feishuanniu22_3: -5030365941120091564
+      feishuanniu22_30: -8637305937906266406
+      feishuanniu22_31: 1707490966464484966
+      feishuanniu22_32: -4485591391619104061
+      feishuanniu22_33: 4179089503081908612
+      feishuanniu22_34: -8729424107277013702
+      feishuanniu22_35: -6508797110808740120
+      feishuanniu22_36: -5219914193289182184
+      feishuanniu22_37: 4894613933232707828
+      feishuanniu22_38: -804245477043077061
+      feishuanniu22_39: -5374306626392133868
+      feishuanniu22_4: 3426014085665851948
+      feishuanniu22_40: 216310882777574927
+      feishuanniu22_41: -2814171212121783951
+      feishuanniu22_42: -8749165609570560141
+      feishuanniu22_43: 5235189741730377241
+      feishuanniu22_44: -3588792040104055204
+      feishuanniu22_45: -4251140476648562216
+      feishuanniu22_46: 6302410005920306583
+      feishuanniu22_47: 7423080005947287016
+      feishuanniu22_48: 4252163121343440813
+      feishuanniu22_49: 9063420013587837526
+      feishuanniu22_5: 7149428558935633755
+      feishuanniu22_50: 5625108821867038270
+      feishuanniu22_51: -926608763353110427
+      feishuanniu22_52: -3053200310162123926
+      feishuanniu22_53: -6386888971950150374
+      feishuanniu22_54: 9167628993043398621
+      feishuanniu22_55: 3003560766331751744
+      feishuanniu22_56: -2956570835576080007
+      feishuanniu22_57: 5205937132726020181
+      feishuanniu22_58: -2094740322564590658
+      feishuanniu22_6: -5288963935895470900
+      feishuanniu22_7: 2237522686420769355
+      feishuanniu22_8: -809840834465359770
+      feishuanniu22_9: -3687759501413760043
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

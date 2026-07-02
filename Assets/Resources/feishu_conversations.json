@@ -1,0 +1,636 @@
+{
+  "conversations": [
+    {
+      "conversationId": "day1_coworker_warning",
+      "unlockDay": 1,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "新来的？",
+          "bubbleSize": 1,
+          "delay": 0.5,
+          "next": "start_part2"
+        },
+        {
+          "id": "start_part2",
+          "speaker": "other",
+          "text": "你也不用太紧张哈。",
+          "bubbleSize": 3,
+          "delay": 0.5,
+          "next": "start_part3"
+        },
+        {
+          "id": "start_part3",
+          "speaker": "other",
+          "text": "按要求做完今天的任务就行。",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": "msg_02"
+        },
+        {
+          "id": "msg_02",
+          "speaker": "other",
+          "text": "还有就是",
+          "bubbleSize": 1,
+          "delay": 2,
+          "next": "msg_02_part2"
+        },
+        {
+          "id": "msg_02_part2",
+          "speaker": "other",
+          "text": "不该按的东西最好别按。",
+          "bubbleSize": 4,
+          "delay": 2,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day2_coworker_ads",
+      "unlockDay": 2,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "不要总看那些东西。",
+          "bubbleSize": 3,
+          "delay": 0.5,
+          "next": "start_part2"
+        },
+        {
+          "id": "start_part2",
+          "speaker": "other",
+          "text": "工作系统偶尔会一些推送奇怪的广告。",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day3_boss_training",
+      "unlockDay": 3,
+      "contactName": "Boss",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "你今天下午有新人培训。",
+          "bubbleSize": 4,
+          "delay": 0.5,
+          "next": "start_part2"
+        },
+        {
+          "id": "start_part2",
+          "speaker": "other",
+          "text": "请按时参加。",
+          "bubbleSize": 2,
+          "delay": 0.5,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day3_coworker_return",
+      "unlockDay": 3,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "你又回来啦。",
+          "bubbleSize": 2,
+          "delay": 0.5,
+          "next": "choice_01"
+        },
+        {
+          "id": "choice_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "？",
+              "bubbleSize": 1,
+              "next": "after_choice"
+            },
+            {
+              "text": "又？我就职过这个公司吗？",
+              "bubbleSize": 4,
+              "next": "after_choice"
+            }
+          ]
+        },
+        {
+          "id": "after_choice",
+          "speaker": "other",
+          "text": "发错了。",
+          "bubbleSize": 1,
+          "delay": 1,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day5_coworker_congrats",
+      "unlockDay": 5,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "恭喜升职",
+          "bubbleSize": 1,
+          "delay": 0.5,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day5_admin_habit",
+      "unlockDay": 5,
+      "contactName": "Boss",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "请你继续保持良好的工作习惯。",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day6_coworker_duplicate_records",
+      "unlockDay": 6,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "公司系统有时候会产生重复的记录",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": "start_part2"
+        },
+        {
+          "id": "start_part2",
+          "speaker": "other",
+          "text": "你不用太在意。",
+          "bubbleSize": 2,
+          "delay": 0.5,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day7_coworker_welfare_plan",
+      "unlockDay": 7,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "其实很多人感谢公司的这套系统。",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": "start_part2"
+        },
+        {
+          "id": "start_part2",
+          "speaker": "other",
+          "text": "至少，在他们最累的时候",
+          "bubbleSize": 4,
+          "delay": 0.5,
+          "next": "start_part3"
+        },
+        {
+          "id": "start_part3",
+          "speaker": "other",
+          "text": "公司真的接住了他们。",
+          "bubbleSize": 4,
+          "delay": 0.5,
+          "next": "start_part4"
+        },
+        {
+          "id": "start_part4",
+          "speaker": "other",
+          "text": "是公司给了他们喘息和调整的机会。",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day10_coworker_warning",
+      "unlockDay": 10,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "我劝你，有些东西最好不要查太深",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": "start_part2"
+        },
+        {
+          "id": "start_part2",
+          "speaker": "other",
+          "text": "知道太多不一定是好事。",
+          "bubbleSize": 4,
+          "delay": 0.5,
+          "next": "choice_01"
+        },
+        {
+          "id": "choice_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "你为什么总这么说？",
+              "bubbleSize": 3,
+              "next": "after_choice"
+            },
+            {
+              "text": "你知道些什么？",
+              "bubbleSize": 3,
+              "next": "after_choice"
+            }
+          ]
+        },
+        {
+          "id": "after_choice",
+          "speaker": "other",
+          "text": "我只是希望你能顺利转正",
+          "bubbleSize": 4,
+          "delay": 1,
+          "next": "after_choice_part2"
+        },
+        {
+          "id": "after_choice_part2",
+          "speaker": "other",
+          "text": "成为我真正的同事。",
+          "bubbleSize": 3,
+          "delay": 1,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day11_boss_department_message",
+      "unlockDay": 11,
+      "contactName": "Boss",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "最近在看部门资料？",
+          "bubbleSize": 3,
+          "delay": 0.5,
+          "next": "choice_01"
+        },
+        {
+          "id": "choice_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "工作需要。",
+              "bubbleSize": 2,
+              "next": "after_choice"
+            },
+            {
+              "text": "系统有错误",
+              "bubbleSize": 2,
+              "next": "after_choice"
+            },
+            {
+              "text": "我发现一个不存在的部门。",
+              "bubbleSize": 4,
+              "next": "after_choice"
+            }
+          ]
+        },
+        {
+          "id": "after_choice",
+          "speaker": "other",
+          "text": "那只是旧部门",
+          "bubbleSize": 2,
+          "delay": 1,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day13_coworker_identity",
+      "unlockDay": 13,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "你在调查我？",
+          "bubbleSize": 2,
+          "delay": 0.5,
+          "next": "player_01"
+        },
+        {
+          "id": "player_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "你是哪个部门的？",
+              "bubbleSize": 3,
+              "next": "msg_02"
+            }
+          ]
+        },
+        {
+          "id": "msg_02",
+          "speaker": "other",
+          "text": "我一直都在这里。",
+          "bubbleSize": 3,
+          "delay": 1,
+          "next": "player_02"
+        },
+        {
+          "id": "player_02",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "为什么没有你的档案？",
+              "bubbleSize": 4,
+              "next": "msg_03"
+            }
+          ]
+        },
+        {
+          "id": "msg_03",
+          "speaker": "other",
+          "text": "有些员工不需要档案",
+          "bubbleSize": 3,
+          "delay": 1,
+          "next": "msg_03_part2"
+        },
+        {
+          "id": "msg_03_part2",
+          "speaker": "other",
+          "text": "我劝你不要再按下那些奇怪按键。",
+          "bubbleSize": 5,
+          "delay": 1,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day14_boss_origin",
+      "unlockDay": 14,
+      "contactName": "Boss",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "今天看到那些资料了吗？",
+          "bubbleSize": 4,
+          "delay": 0.5,
+          "next": "player_01"
+        },
+        {
+          "id": "player_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "我为什么会出现在创始名单？",
+              "bubbleSize": 4,
+              "next": "msg_02"
+            }
+          ]
+        },
+        {
+          "id": "msg_02",
+          "speaker": "other",
+          "text": "那不是你现在该知道的事。",
+          "bubbleSize": 4,
+          "delay": 1,
+          "next": "player_02"
+        },
+        {
+          "id": "player_02",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "我以前到底是谁？",
+              "bubbleSize": 3,
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "conversationId": "day15_boss_commercialization",
+      "unlockDay": 15,
+      "contactName": "Boss",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "你是不是开始感觉到公司变了？",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": "player_01"
+        },
+        {
+          "id": "player_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "是谁改的项目？",
+              "bubbleSize": 3,
+              "next": "msg_02"
+            }
+          ]
+        },
+        {
+          "id": "msg_02",
+          "speaker": "other",
+          "text": "不，没有人改。",
+          "bubbleSize": 2,
+          "delay": 1,
+          "next": "msg_02_part2"
+        },
+        {
+          "id": "msg_02_part2",
+          "speaker": "other",
+          "text": "但是人终究是要向现实低头的。",
+          "bubbleSize": 5,
+          "delay": 1,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day16_boss_truth",
+      "unlockDay": 16,
+      "contactName": "Boss",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "现在你都知道了。",
+          "bubbleSize": 3,
+          "delay": 0.5,
+          "next": "player_01"
+        },
+        {
+          "id": "player_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "所以一直被测试的人是我。",
+              "bubbleSize": 4,
+              "next": "msg_02"
+            }
+          ]
+        },
+        {
+          "id": "msg_02",
+          "speaker": "other",
+          "text": "对。",
+          "bubbleSize": 1,
+          "delay": 1,
+          "next": "player_02"
+        },
+        {
+          "id": "player_02",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "为什么？",
+              "bubbleSize": 2,
+              "next": "msg_03"
+            }
+          ]
+        },
+        {
+          "id": "msg_03",
+          "speaker": "other",
+          "text": "因为只有你，才知道应该怎样结束它。",
+          "bubbleSize": 5,
+          "delay": 1,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day17_linqiao_contact",
+      "unlockDay": 17,
+      "contactName": "林乔",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "我终于能够联系你了。",
+          "bubbleSize": 3,
+          "delay": 0.5,
+          "next": "player_01"
+        },
+        {
+          "id": "player_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "你现在在哪",
+              "bubbleSize": 2,
+              "next": "msg_02"
+            }
+          ]
+        },
+        {
+          "id": "msg_02",
+          "speaker": "other",
+          "text": "不重要。",
+          "bubbleSize": 1,
+          "delay": 1,
+          "next": "player_02"
+        },
+        {
+          "id": "player_02",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "我怎么才能救你？",
+              "bubbleSize": 3,
+              "next": "msg_03"
+            }
+          ]
+        },
+        {
+          "id": "msg_03",
+          "speaker": "other",
+          "text": "别按那个按键！",
+          "bubbleSize": 2,
+          "delay": 1,
+          "next": ""
+        }
+      ]
+    },
+    {
+      "conversationId": "day19_coworker_final_choice",
+      "unlockDay": 19,
+      "contactName": "同事1",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "如果按下去",
+          "bubbleSize": 2,
+          "delay": 0.5,
+          "next": "start_part2"
+        },
+        {
+          "id": "start_part2",
+          "speaker": "other",
+          "text": "很多人会失去现在的生活，也有人会终于知道真相。",
+          "bubbleSize": 5,
+          "delay": 0.5,
+          "next": "start_part4"
+        },
+        {
+          "id": "start_part4",
+          "speaker": "other",
+          "text": "所以",
+          "bubbleSize": 1,
+          "delay": 0.5,
+          "next": "start_part5"
+        },
+        {
+          "id": "start_part5",
+          "speaker": "other",
+          "text": "请自己决定。",
+          "bubbleSize": 2,
+          "delay": 0.5,
+          "next": ""
+        }
+      ]
+    }
+  ]
+}

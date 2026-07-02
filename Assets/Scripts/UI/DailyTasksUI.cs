@@ -52,6 +52,7 @@ namespace EmployeeHandbook.DailyTasks
             }
 
             List<TaskData> todayTasks = taskManager.GetTodayTasks();
+            bool showNoTaskDay = todayTasks.Count == 0 && taskManager.IsNoTaskDay();
             for (int i = 0; i < taskSlots.Length; i++)
             {
                 DailyTaskItemUI slot = taskSlots[i];
@@ -63,7 +64,9 @@ namespace EmployeeHandbook.DailyTasks
 
                 slot.SetSprites(uncheckedSprite, checkedSprite);
 
-                if (i < todayTasks.Count)
+                if (showNoTaskDay)
+                    slot.ShowNullCompleted();
+                else if (i < todayTasks.Count)
                     slot.Setup(todayTasks[i]);
                 else
                     slot.Clear();

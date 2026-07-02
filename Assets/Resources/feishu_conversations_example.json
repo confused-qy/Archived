@@ -1,0 +1,62 @@
+{
+  "conversations": [
+    {
+      "conversationId": "boss_day1_intro",
+      "unlockDay": 1,
+      "contactName": "主管",
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "speaker": "other",
+          "text": "今天有个文件需要你处理一下。",
+          "bubbleSize": 3,
+          "delay": 0.5,
+          "next": "choice_01"
+        },
+        {
+          "id": "choice_01",
+          "speaker": "choice",
+          "choices": [
+            {
+              "text": "好的，我马上处理。",
+              "bubbleSize": 2,
+              "next": "after_accept"
+            },
+            {
+              "text": "这个今天必须完成吗？",
+              "bubbleSize": 3,
+              "next": "after_question"
+            }
+          ]
+        },
+        {
+          "id": "after_accept",
+          "speaker": "other",
+          "text": "辛苦，处理完发我。",
+          "bubbleSize": 2,
+          "delay": 1,
+          "unlockClueId": 1,
+          "next": null
+        },
+        {
+          "id": "after_question",
+          "speaker": "other",
+          "text": "是的，今天下班前要。",
+          "bubbleSize": 2,
+          "delay": 1,
+          "next": "after_question_2"
+        },
+        {
+          "id": "after_question_2",
+          "speaker": "other",
+          "text": "你先处理，有问题再问我。",
+          "bubbleSize": 3,
+          "delay": 1,
+          "unlockClueId": 1,
+          "next": null
+        }
+      ]
+    }
+  ]
+}

@@ -46,6 +46,17 @@ namespace EmployeeHandbook.DailyTasks
             gameObject.SetActive(true);
         }
 
+        public void ShowNullCompleted()
+        {
+            AutoBindChildren();
+            SetTaskName("null");
+
+            if (checkImage != null)
+                checkImage.sprite = checkedSprite;
+
+            gameObject.SetActive(true);
+        }
+
         public void Clear()
         {
             SetTaskName("");

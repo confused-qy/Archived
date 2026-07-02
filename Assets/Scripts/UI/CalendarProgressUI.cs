@@ -4,11 +4,11 @@ namespace EmployeeHandbook.DailyTasks
 {
     /// <summary>
     /// 根据当前天数显示日历上的斜杠。
-    /// Day 1 显示 0 个斜杠，Day 2 显示 1 个斜杠，超过 Day 30 显示 30 个斜杠。
+    /// Day 1 显示 0 个斜杠，Day 2 显示 1 个斜杠，超过 Day 20 显示 20 个斜杠。
     /// </summary>
     public class CalendarProgressUI : MonoBehaviour
     {
-        [SerializeField] private GameObject[] slashObjects = new GameObject[30];
+        [SerializeField] private GameObject[] slashObjects = new GameObject[GameManager.TotalGameDays];
         [SerializeField] private bool autoFindSlashObjects = true;
         [SerializeField] private string slashObjectNamePrefix = "Slash";
 
@@ -41,7 +41,7 @@ namespace EmployeeHandbook.DailyTasks
             if (GameManager.Instance != null && GameManager.Instance.CurrentState != null)
                 currentDay = GameManager.Instance.CurrentState.currentDay;
 
-            int completedDays = Mathf.Clamp(currentDay - 1, 0, slashObjects.Length);
+            int completedDays = Mathf.Clamp(currentDay - 1, 0, Mathf.Min(slashObjects.Length, GameManager.TotalGameDays));
 
             for (int i = 0; i < slashObjects.Length; i++)
             {

@@ -6,22 +6,21 @@ namespace EmployeeHandbook.DailyTasks
 {
     /// <summary>
     /// 根据当前天数刷新工牌上的职位等级文字和图片。
-    /// 每 5 天提升 1 级：1-5 天为 1 级，26-30 天为 6 级。
+    /// 每 4 天提升 1 级：1-4 天为 1 级，17-20 天为 5 级。
     /// </summary>
     public class PositionBadgeUI : MonoBehaviour
     {
         [SerializeField] private Image badgeImage;
         [SerializeField] private Text positionText;
         [SerializeField] private TMP_Text positionTmpText;
-        [SerializeField] private Sprite[] levelSprites = new Sprite[6];
+        [SerializeField] private Sprite[] levelSprites = new Sprite[GameManager.MaxPositionLevel];
         [SerializeField] private string[] levelNames =
         {
             "实习生",
             "助理",
             "专员",
             "主管",
-            "经理",
-            "总监"
+            "经理"
         };
 
         private void Start()
@@ -51,7 +50,7 @@ namespace EmployeeHandbook.DailyTasks
             if (GameManager.Instance != null)
                 level = GameManager.Instance.CurrentPositionLevel;
 
-            int index = Mathf.Clamp(level - 1, 0, 5);
+            int index = Mathf.Clamp(level - 1, 0, GameManager.MaxPositionLevel - 1);
 
             if (badgeImage != null && levelSprites != null && index < levelSprites.Length && levelSprites[index] != null)
                 badgeImage.sprite = levelSprites[index];

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Opens and closes one UI window.
@@ -20,6 +21,7 @@ public class WindowController : MonoBehaviour
     private void Start()
     {
         HideDesktopWindows();
+        InstallDesktopWindowFocusTargets();
     }
 
     public void OpenWindow()
@@ -29,18 +31,18 @@ public class WindowController : MonoBehaviour
 
     public void OpenWindowOnDoubleClick()
     {
-        OpenSelectedWindow(windowPanel);
+        OpenSelectedWindowOnDoubleClick(windowPanel);
     }
 
     public void OpenSelectedWindow(GameObject targetWindow)
     {
-        if (RegisterDoubleClick(targetWindow))
-            ShowSelectedWindow(targetWindow);
+        ShowSelectedWindow(targetWindow);
     }
 
     public void OpenSelectedWindowOnDoubleClick(GameObject targetWindow)
     {
-        OpenSelectedWindow(targetWindow);
+        if (RegisterDoubleClick(targetWindow))
+            ShowSelectedWindow(targetWindow);
     }
 
     private void ShowSelectedWindow(GameObject targetWindow)
@@ -49,11 +51,21 @@ public class WindowController : MonoBehaviour
             return;
 
         targetWindow.SetActive(true);
-        targetWindow.transform.SetAsLastSibling();
+        FocusWindow(targetWindow);
+    }
 
-        currentSelectedWindow = FindDesktopWindow(targetWindow);
-        currentSelectedWindow.SetActive(true);
-        currentSelectedWindow.transform.SetAsLastSibling();
+    public void FocusWindow(GameObject targetWindow)
+    {
+        if (targetWindow == null)
+            return;
+
+        GameObject desktopWindow = FindDesktopWindow(targetWindow);
+        if (desktopWindow == null)
+            return;
+
+        desktopWindow.SetActive(true);
+        desktopWindow.transform.SetAsLastSibling();
+        currentSelectedWindow = desktopWindow;
     }
 
     public void CloseWindow()
@@ -89,6 +101,17 @@ public class WindowController : MonoBehaviour
             }
 
             child.gameObject.SetActive(false);
+        }
+    }
+
+    private void InstallDesktopWindowFocusTargets()
+    {
+        foreach (Transform child in transform)
+        {
+            if (ShouldKeepVisible(child))
+                continue;
+
+            DesktopWindowFocusTarget.BindWindow(child.gameObject, this);
         }
     }
 
@@ -145,5 +168,40 @@ public class WindowController : MonoBehaviour
         lastOpenClickTime = -1f;
         lastOpenClickTarget = null;
         return true;
+    }
+}
+
+/// <summary>
+/// Brings its owning desktop window to the front when any UI element inside it is clicked.
+/// This component is installed at runtime by WindowController.
+/// </summary>
+public class DesktopWindowFocusTarget : MonoBehaviour, IPointerDownHandler
+{
+    private WindowController windowController;
+    private GameObject desktopWindow;
+
+    public static void BindWindow(GameObject windowRoot, WindowController controller)
+    {
+        if (windowRoot == null || controller == null)
+            return;
+
+        Transform[] children = windowRoot.GetComponentsInChildren<Transform>(true);
+        for (int i = 0; i < children.Length; i++)
+        {
+            DesktopWindowFocusTarget focusTarget = children[i].GetComponent<DesktopWindowFocusTarget>();
+            if (focusTarget == null)
+                focusTarget = children[i].gameObject.AddComponent<DesktopWindowFocusTarget>();
+
+            focusTarget.windowController = controller;
+            focusTarget.desktopWindow = windowRoot;
+        }
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (windowController == null || desktopWindow == null)
+            return;
+
+        windowController.FocusWindow(desktopWindow);
     }
 }

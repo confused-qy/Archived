@@ -8,6 +8,10 @@ namespace EmployeeHandbook.DailyTasks
     /// </summary>
     public class GameManager : MonoBehaviour
     {
+        public const int TotalGameDays = 20;
+        public const int DaysPerPositionLevel = 4;
+        public const int MaxPositionLevel = 5;
+
         public static GameManager Instance { get; private set; }
 
         [SerializeField] private TaskManager taskManager;
@@ -34,7 +38,7 @@ namespace EmployeeHandbook.DailyTasks
                 if (playerState == null)
                     return 1;
 
-                return Mathf.Clamp(((playerState.currentDay - 1) / 5) + 1, 1, 6);
+                return Mathf.Clamp(((playerState.currentDay - 1) / DaysPerPositionLevel) + 1, 1, MaxPositionLevel);
             }
         }
 
@@ -194,10 +198,10 @@ namespace EmployeeHandbook.DailyTasks
             if (playerState == null)
                 return;
 
-            if (playerState.currentDay <= 30)
+            if (playerState.currentDay <= TotalGameDays)
                 return;
 
-            Debug.Log("当前天数超过 30 天，进入结局判断。最终经验：" + playerState.experience);
+            Debug.Log("当前天数超过 " + TotalGameDays + " 天，进入结局判断。最终经验：" + playerState.experience);
             GameEnded?.Invoke();
         }
     }

@@ -34,6 +34,12 @@ namespace EmployeeHandbook.Phone
         [SerializeField] private AudioClip hangupClip;
         [SerializeField] private float defaultRingDelay = 2f;
 
+        [Header("Ring Pulse")]
+        [SerializeField] private bool useRingPulse = true;
+        [SerializeField] private Transform phoneVisualRoot;
+        [SerializeField] private float pulseScale = 1.08f;
+        [SerializeField] private float pulseInterval = 0.08f;
+
         [Header("Incoming Call")]
         [SerializeField] private GameObject incomingCallScreen;
         [SerializeField] private Slider answerSlider;
@@ -73,12 +79,15 @@ namespace EmployeeHandbook.Phone
         private Coroutine ringDelayRoutine;
         private Coroutine finishRoutine;
         private Coroutine typewriterRoutine;
+        private Coroutine ringPulseRoutine;
         private readonly Dictionary<GameObject, Coroutine> fadeRoutines = new Dictionary<GameObject, Coroutine>();
         private bool subscribedToGameManager;
         private bool waitingForFinalClick;
         private bool dialogueContentVisible;
         private bool isTypingDialogue;
         private string currentFullDialogueText = string.Empty;
+        private Transform cachedPulseTarget;
+        private Vector3 pulseBaseScale = Vector3.one;
         private readonly System.Collections.Generic.HashSet<string> finishedCallIds =
             new System.Collections.Generic.HashSet<string>();
 
@@ -101,6 +110,7 @@ namespace EmployeeHandbook.Phone
 
             LoadCalls();
             BindUiEvents();
+            CachePulseTarget();
             HideAllScreens();
         }
 
@@ -126,6 +136,7 @@ namespace EmployeeHandbook.Phone
             StopTypewriter();
             StopAllFadeRoutines();
             StopRingSound();
+            StopRingPulse();
         }
 
         public void RefreshForCurrentDay()
@@ -140,6 +151,7 @@ namespace EmployeeHandbook.Phone
             StopFinishRoutine();
             StopTypewriter();
             StopRingSound();
+            StopRingPulse();
 
             if (currentCall == null || IsCallFinished(currentCall))
             {
@@ -227,6 +239,7 @@ namespace EmployeeHandbook.Phone
 
             state = PhoneState.Ringing;
             PlayRingSound();
+            StartRingPulse();
         }
 
         private void AnswerCall()
@@ -235,6 +248,7 @@ namespace EmployeeHandbook.Phone
                 return;
 
             StopRingSound();
+            StopRingPulse();
             PlayAnswerSound();
 
             HideWithFade(incomingCallScreen);
@@ -297,6 +311,7 @@ namespace EmployeeHandbook.Phone
             SetSpeakerName(string.Empty);
             HideDialogueContent();
             StopRingSound();
+            StopRingPulse();
 
             if (hangupScreenDelay > 0f)
                 yield return new WaitForSeconds(hangupScreenDelay);
@@ -323,6 +338,7 @@ namespace EmployeeHandbook.Phone
             SetVisibleImmediately(incomingCallScreen, false);
             SetVisibleImmediately(dialogueScreen, false);
             StopRingSound();
+            StopRingPulse();
             state = PhoneState.Finished;
         }
 
@@ -624,6 +640,92 @@ namespace EmployeeHandbook.Phone
             }
 
             audioSource.loop = false;
+        }
+
+        private void CachePulseTarget()
+        {
+            cachedPulseTarget = phoneVisualRoot;
+
+            if (cachedPulseTarget == null && phoneButton != null)
+                cachedPulseTarget = phoneButton.transform;
+
+            if (cachedPulseTarget != null)
+                pulseBaseScale = cachedPulseTarget.localScale;
+        }
+
+        private void StartRingPulse()
+        {
+            if (!useRingPulse)
+                return;
+
+            if (cachedPulseTarget == null)
+                CachePulseTarget();
+
+            if (cachedPulseTarget == null)
+                return;
+
+            if (ringPulseRoutine != null)
+                StopCoroutine(ringPulseRoutine);
+
+            ringPulseRoutine = StartCoroutine(PlayRingPulse());
+        }
+
+        private IEnumerator PlayRingPulse()
+        {
+            while (state == PhoneState.Ringing || state == PhoneState.IncomingOpen)
+            {
+                yield return AnimatePulseScale(pulseBaseScale, pulseBaseScale * pulseScale, pulseInterval);
+                yield return AnimatePulseScale(pulseBaseScale * pulseScale, pulseBaseScale, pulseInterval);
+            }
+
+            ringPulseRoutine = null;
+            ResetPulseScale();
+        }
+
+        private IEnumerator AnimatePulseScale(Vector3 fromScale, Vector3 toScale, float duration)
+        {
+            if (cachedPulseTarget == null)
+                yield break;
+
+            if (duration <= 0f)
+            {
+                cachedPulseTarget.localScale = toScale;
+                yield break;
+            }
+
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                if (cachedPulseTarget == null)
+                    yield break;
+
+                elapsed += Time.unscaledDeltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                cachedPulseTarget.localScale = Vector3.Lerp(fromScale, toScale, t);
+                yield return null;
+            }
+
+            if (cachedPulseTarget != null)
+                cachedPulseTarget.localScale = toScale;
+        }
+
+        private void StopRingPulse()
+        {
+            if (ringPulseRoutine != null)
+            {
+                StopCoroutine(ringPulseRoutine);
+                ringPulseRoutine = null;
+            }
+
+            ResetPulseScale();
+        }
+
+        private void ResetPulseScale()
+        {
+            if (cachedPulseTarget == null)
+                return;
+
+            cachedPulseTarget.localScale = pulseBaseScale;
         }
 
         private void StopRingDelay()

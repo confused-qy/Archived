@@ -1,0 +1,134 @@
+{
+  "mails": [
+    {
+      "mailId": "day1_onboarding_manual",
+      "day": 1,
+      "date": "3/1",
+      "sender": "HR",
+      "subject": "入职邮件",
+      "unlockClueId": 0,
+      "completeTaskId": "D01_M01",
+      "body": "欢迎入职 MonkeyAI。\\n\\n请在今日完成入职确认，并阅读《员工手册》。\\n\\n请员工专注自己的工作，不得访问与工作无关的信息。\\n为保护公司信息安全，员工不得点击下载可疑文件。\\n请员工遵守工作流程，不得擅自点击未经授权按钮。"
+    },
+    {
+      "mailId": "day2_onboarding_duplicate",
+      "day": 2,
+      "date": "3/2",
+      "sender": "人事系统",
+      "subject": "新人入职登记",
+      "unlockClueId": 0,
+      "completeTaskId": "D02_M03",
+      "body": "新人入职登记表核验。\\n\\n姓名：魏艾\\n岗位：固定岗位台账专员（实习）\\n状态：已入职\\n\\n系统提示：检测到相似历史入职记录。\\n记录状态：重复。\\n处理建议：请补录信息并核对台账。"
+    },
+    {
+      "mailId": "day3_training_video",
+      "day": 3,
+      "date": "3/3",
+      "sender": "行政消息",
+      "subject": "新人培训视频",
+      "unlockClueId": 0,
+      "completeTaskId": "D03_M01",
+      "body": "今天下午有新人培训，请按时参加。\\n\\n培训视频：《MonkeyAI 创始人寄语》\\n\\n创始人：MonkeyAI 创立的初衷，是帮助每一位员工找到更健康的工作方式。工作不应该成为负担。我们希望通过数据，让员工获得更好的生活。\\n\\n创始人：我们想解决一个问题：为什么越来越多人被工作压垮。近年来社会中高强度的工作压垮员工的情况频频出现。MonkeyAI 希望帮助员工保存记忆、保存经验，当我们的员工也有快要撑不住的时候，公司能成为他们的一道保险与靠山，让他们有机会重新开始。"
+    },
+    {
+      "mailId": "day5_prefit_withdrawn",
+      "day": 5,
+      "date": "3/5",
+      "sender": "专项治理项目组",
+      "subject": "适配记录",
+      "unlockClueId": 0,
+      "completeTaskId": "D05_M03",
+      "body": "邮件标题：魏艾适配记录--XVII测试报告\\n\\n正文内容：无\\n附件：无标题.data\\n\\n系统提示：附件下载失败。\\n该邮件已被撤回。"
+    },
+    {
+      "mailId": "day8_withdrawn_prefit",
+      "day": 8,
+      "date": "3/8",
+      "sender": "已撤回",
+      "subject": "初筛报告",
+      "unlockClueId": 0,
+      "completeTaskId": "D08_M01",
+      "body": "标题：《魏艾适配记录——XVII 初筛报告》\\n收件人：魏艾\\n撤回原因：错误投递至观察对象\\n\\n附件名称：C017_PreFit\\n附件状态：未销毁，仅封存。\\n\\n观察对象：C-017\\n当前压力值：观察中\\n公司信任度：待培养\\n推荐策略：福利沟通优先，完整授权条款延后展示。"
+    },
+    {
+      "mailId": "day8_boss_to_hr",
+      "day": 8,
+      "date": "3/8",
+      "sender": "Boss",
+      "subject": "新员工沟通",
+      "unlockClueId": 0,
+      "completeTaskId": "",
+      "body": "Boss → HR\\n\\n新员工不要提数据商业授权的事情，先让他们签协议，协议细则之后再统一解释。\\n\\n补偿金额按照实际发放即可，剩余部分先放项目预算，不要在台账中留下备注与痕迹。"
+    },
+    {
+      "mailId": "day10_prefit_report",
+      "day": 10,
+      "date": "3/10",
+      "sender": "专项治理项目组",
+      "subject": "XVII测试报告",
+      "unlockClueId": 0,
+      "completeTaskId": "D10_M01",
+      "body": "【魏艾适配记录-XVII测试报告：C017_PreFit】\\n\\n对象：魏艾\\n当前岗位：固定岗位台账专员（实习）\\n\\n观察项01：工作服从度\\n结果：中等偏上。目标能够按时完成工作任务，对系统提示响应积极。\\n\\n观察项02：异常点击倾向\\n结果：偏高。对象多次查看与岗位无关的信息流与工作文件。\\n\\n观察项03：压力诱导敏感度\\n工作服从度：中高\\n压力积累值：上升\\n公司信任度：待培养\\n异常追查倾向：高\\n归档接受概率：38%\\n\\n推荐话术：强调疗养福利、淡化数据授权、延后告知商业用途。\\n推荐负责人：直属主管 / 中层归档推进人。\\n\\n分流建议：\\nA. 自愿归档沟通：完整展示协议，优先疗养支持。\\nB. 诱导归档推进：先展示福利条款，商业授权条款后置。\\n\\n系统备注：B 路径存在告知不足风险。\\n专项治理项目组备注：改写为“分阶段告知”，避免使用“诱导”。"
+    },
+    {
+      "mailId": "day11_delete_resigned_files",
+      "day": 11,
+      "date": "3/11",
+      "sender": "档案系统",
+      "subject": "离职档案清理",
+      "unlockClueId": 0,
+      "completeTaskId": "D11_M01",
+      "body": "今日任务：删除离职员工文件。\\n\\n请同步部门资料后，整理离职员工档案。\\n\\n离职员工列表：\\n姓名：林乔\\n部门：AI训练组\\n离职原因：疗养计划完成\\n档案状态：已归档\\n备注：无需联系家属\\n审批人：Boss\\n审批意见：同意"
+    },
+    {
+      "mailId": "day12_handbook_update",
+      "day": 12,
+      "date": "3/12",
+      "sender": "HR",
+      "subject": "员工手册更新",
+      "unlockClueId": 0,
+      "completeTaskId": "D12_M01",
+      "body": "员工手册更新，请确认最新行为规范。\\n\\n标题：MonkeyAI员工行为规范。\\n\\n第三条：请员工遵守工作流程，尽可能避免未经授权按钮的使用，请不要相信未经证实的信息，不要传播谣言，MonkeyAI与你同在。"
+    },
+    {
+      "mailId": "day12_future_self",
+      "day": 12,
+      "date": "3/12",
+      "sender": "未知发件人",
+      "subject": "给未来的自己",
+      "unlockClueId": 0,
+      "completeTaskId": "",
+      "body": "给下一轮的我：\\n\\n如果你看到这封邮件，说明第 16 轮失败了。\\n\\n这家公司不会阻止你按按钮，它会训练你在它想要的时候按按钮。"
+    },
+    {
+      "mailId": "day14_project_proposal",
+      "day": 14,
+      "date": "3/14",
+      "sender": "项目档案库",
+      "subject": "项目立项资料",
+      "unlockClueId": 0,
+      "completeTaskId": "D14_M01",
+      "body": "《MonkeyAI 项目立项书》\\n\\n项目名称：MonkeyAI\\n项目目标：通过人格数字化技术，保存人类意识，实现长期陪伴与记忆延续。\\n项目愿景：让离开的人，仍然能够陪伴活着的人。\\n\\n最后一页：\\n技术只是工具，真正值得保存的是人与人的联系。"
+    },
+    {
+      "mailId": "day15_confidentiality",
+      "day": 15,
+      "date": "3/15",
+      "sender": "公司通知",
+      "subject": "保密协议更新",
+      "unlockClueId": 0,
+      "completeTaskId": "D15_M01",
+      "body": "请所有员工立即完成《项目保密协议》更新。\\n\\n协议新增条款：员工同意公司在授权范围内采集行为数据，用于提升管理效率。\\n\\n灰字备注：包括但不限于点击行为、决策偏好及人格模型训练。"
+    },
+    {
+      "mailId": "day16_final_assessment",
+      "day": 16,
+      "date": "3/16",
+      "sender": "核心评估系统",
+      "subject": "最终评估",
+      "unlockClueId": 0,
+      "completeTaskId": "D16_M01",
+      "body": "《身份恢复记录》\\n\\n对象：C-017\\n当前身份：流程审核专员\\n原身份：交互设计负责人\\n恢复状态：锁定\\n\\n《魏艾轮次记录》\\n第12轮：主动公开实验，失败。\\n第13轮：拒绝提交评估，失败。\\n第14轮：试图销毁服务器，失败。\\n第15轮：恢复全部人格，失败。\\n第16轮：权限不足，失败。\\n第17轮：进行中。\\n\\n《最终说明》\\n实验目的：验证创始人在失去全部记忆后，是否仍会做出相同的选择。\\n当前对象：项目原设计者\\n对象姓名：魏艾"
+    }
+  ]
+}

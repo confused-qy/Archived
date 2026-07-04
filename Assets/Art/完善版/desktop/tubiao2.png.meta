@@ -116,10 +116,10 @@ TextureImporter:
       name: tubiao2_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 468
+        x: 20
+        y: 21
         width: 233
-        height: 394
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

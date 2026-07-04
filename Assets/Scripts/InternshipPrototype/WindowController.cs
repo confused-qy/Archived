@@ -78,6 +78,9 @@ public class WindowController : MonoBehaviour
         if (targetWindow == null)
             return;
 
+        if (targetWindow.activeInHierarchy)
+            EmployeeHandbook.Feishu.FeishuSfxPlayer.PlayCloseClickSfx();
+
         targetWindow.SetActive(false);
 
         if (currentSelectedWindow == targetWindow || currentSelectedWindow == FindDesktopWindow(targetWindow))

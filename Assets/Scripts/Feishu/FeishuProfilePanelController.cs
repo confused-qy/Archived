@@ -21,6 +21,7 @@ namespace EmployeeHandbook.Feishu
                 return;
             }
 
+            FeishuSfxPlayer.PlayOpenFriendProfileSfx();
             CloseAllProfiles();
             profilePanel.SetActive(true);
         }
@@ -29,6 +30,12 @@ namespace EmployeeHandbook.Feishu
         {
             if (profilePanel != null)
                 profilePanel.SetActive(false);
+        }
+
+        public void CloseProfileWithSound(GameObject profilePanel)
+        {
+            FeishuSfxPlayer.PlayCloseClickSfx();
+            CloseProfile(profilePanel);
         }
 
         public void CloseAllProfiles()
@@ -41,6 +48,12 @@ namespace EmployeeHandbook.Feishu
                 if (profilePanels[i] != null)
                     profilePanels[i].SetActive(false);
             }
+        }
+
+        public void CloseAllProfilesWithSound()
+        {
+            FeishuSfxPlayer.PlayCloseClickSfx();
+            CloseAllProfiles();
         }
     }
 }

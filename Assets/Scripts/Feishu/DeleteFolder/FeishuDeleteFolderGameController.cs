@@ -130,9 +130,12 @@ namespace EmployeeHandbook.Feishu.DeleteFolder
             if (!canPlayToday || todayDeleteTask == null || todayFileSet == null)
                 return;
 
+            FeishuSfxPlayer.PlayDeleteClickSfx();
+
             bool correct = IsSelectionCorrect();
             if (!correct)
             {
+                FeishuSfxPlayer.PlayDeleteFailureSfx();
                 ClearSelection();
                 ShowResult(failureMessage);
                 return;
@@ -156,6 +159,7 @@ namespace EmployeeHandbook.Feishu.DeleteFolder
             if (deleteButton != null)
                 deleteButton.gameObject.SetActive(false);
 
+            FeishuSfxPlayer.PlayDeleteSuccessSfx();
             ShowResult(successMessage);
         }
 

@@ -143,6 +143,7 @@ namespace EmployeeHandbook.Feishu
 
         public void CloseFeishuWindow()
         {
+            FeishuSfxPlayer.PlayCloseClickSfx();
             HidePanel();
 
             if (feishuWindowRoot != null)

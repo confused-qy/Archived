@@ -70,6 +70,8 @@ namespace EmployeeHandbook.Feishu
 
         public void OpenContact()
         {
+            FeishuSfxPlayer.PlayOpenChatSfx();
+
             if (manager == null)
             {
                 Debug.LogWarning("FeishuContactButton 缺少 Conversation Manager。", this);

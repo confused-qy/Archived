@@ -59,6 +59,8 @@ namespace EmployeeHandbook.Feishu
 
         private void Choose()
         {
+            FeishuSfxPlayer.PlaySendMessageSfx();
+
             if (chatController != null && choice != null)
             {
                 chatController.Choose(choice);

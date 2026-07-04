@@ -47,13 +47,21 @@ namespace EmployeeHandbook.Feishu
         private void Start()
         {
             if (selectedOnStart)
-                SelectThis();
+                SelectThis(false);
             else
                 SetSelected(false);
         }
 
         public void SelectThis()
         {
+            SelectThis(true);
+        }
+
+        private void SelectThis(bool playSound)
+        {
+            if (playSound)
+                FeishuSfxPlayer.PlayTabClickSfx();
+
             CacheGroupButtons();
 
             if (groupButtons != null && groupButtons.Length > 0)

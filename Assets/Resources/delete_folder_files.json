@@ -17,12 +17,12 @@
       "deleteFolderTaskName": "删除Word文件",
       "useContainsMatch": false,
       "files": [
-        { "fileId": "d04_01", "fileName": "审核清单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d04_02", "fileName": "旧版会议纪要", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d04_03", "fileName": "废弃通知", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d04_04", "fileName": "发票汇总", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d04_05", "fileName": "草稿说明文档", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d04_06", "fileName": "员工名单", "shouldDelete": false, "spriteIndex": -1 }
+        { "fileId": "d04_01", "fileName": "旧版会议纪要", "shouldDelete": true, "spriteIndex": 0 },
+        { "fileId": "d04_02", "fileName": "审核清单", "shouldDelete": false, "spriteIndex": 1 },
+        { "fileId": "d04_03", "fileName": "草稿说明文档", "shouldDelete": true, "spriteIndex": 0 },
+        { "fileId": "d04_04", "fileName": "发票汇总", "shouldDelete": false, "spriteIndex": 2 },
+        { "fileId": "d04_05", "fileName": "废弃通知", "shouldDelete": true, "spriteIndex": 0 },
+        { "fileId": "d04_06", "fileName": "员工名单", "shouldDelete": false, "spriteIndex": 1 }
       ],
       "clueIdsOnSuccess": []
     },

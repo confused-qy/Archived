@@ -1,0 +1,138 @@
+{
+  "calls": [
+    {
+      "day": 4,
+      "callId": "day4_boss_call",
+      "ringDelay": 2,
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "text": "最近工作还适应吗？上午主要做了什么？",
+          "choices": [
+            {
+              "text": "上午核对台账，发现很多员工转移记录。",
+              "next": "transfer_records"
+            },
+            {
+              "text": "电脑一直弹广告。",
+              "next": "popup_ads"
+            },
+            {
+              "text": "完成了今天的工作。",
+              "next": "work_done"
+            }
+          ]
+        },
+        {
+          "id": "transfer_records",
+          "text": "那不是你的工作内容。台账专员需要的是准确和稳定，不是猜测。",
+          "next": ""
+        },
+        {
+          "id": "popup_ads",
+          "text": "不要相信网络消息。最近防火墙有点问题无法过滤垃圾广告，你的工作是把每天的任务做完。",
+          "next": ""
+        },
+        {
+          "id": "work_done",
+          "text": "很好，保持这种节奏，你会很快适应这里。",
+          "next": ""
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "callId": "day6_boss_call",
+      "ringDelay": 2,
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "text": "最近似乎经常看到你停留在员工系统，有什么问题吗？",
+          "choices": [
+            {
+              "text": "系统里有重复文件。",
+              "next": "warning"
+            },
+            {
+              "text": "我在学习公司流程。",
+              "next": "warning"
+            },
+            {
+              "text": "没什么。",
+              "next": "warning"
+            }
+          ]
+        },
+        {
+          "id": "warning",
+          "text": "不要因为好奇影响工作。",
+          "next": ""
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "callId": "day11_boss_call",
+      "ringDelay": 2,
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "text": "最近在看部门资料？",
+          "choices": [
+            {
+              "text": "工作需要。",
+              "next": "old_department"
+            },
+            {
+              "text": "系统有错误。",
+              "next": "old_department"
+            },
+            {
+              "text": "我发现我们还有一个项目组。",
+              "next": "old_department"
+            }
+          ]
+        },
+        {
+          "id": "old_department",
+          "text": "那只是旧部门别称。",
+          "next": ""
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "callId": "day18_boss_call",
+      "ringDelay": 2,
+      "firstNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "text": "你已经知道所有事情了。你觉得我们错了吗？",
+          "choices": [
+            {
+              "text": "你们骗人。",
+              "next": "final_answer"
+            },
+            {
+              "text": "你们帮助了很多人。",
+              "next": "final_answer"
+            },
+            {
+              "text": "我不知道。",
+              "next": "final_answer"
+            }
+          ]
+        },
+        {
+          "id": "final_answer",
+          "text": "我曾经也觉得答案很简单，后来发现并不是。系统救过很多人，也伤害过很多人。现在由你决定。",
+          "next": ""
+        }
+      ]
+    }
+  ]
+}

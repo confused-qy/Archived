@@ -14,6 +14,7 @@ namespace EmployeeHandbook.DailyTasks
         [SerializeField, Range(0f, 1f)] private float triggerValue = 0.95f;
         [SerializeField] private float returnDuration = 0.25f;
         [SerializeField] private DayEndTransitionController dayEndTransition;
+        [SerializeField] private PromotionCutsceneController promotionCutscene;
 
         [Header("Optional Audio")]
         [SerializeField] private AudioSource audioSource;
@@ -27,6 +28,7 @@ namespace EmployeeHandbook.DailyTasks
         private float lastSuccessTime = -10f;
         private int dragStartDay = -1;
         private bool waitingForTransition;
+        private bool promotionCutsceneStarted;
 
         private void Awake()
         {
@@ -38,6 +40,9 @@ namespace EmployeeHandbook.DailyTasks
 
             if (dayEndTransition == null)
                 dayEndTransition = FindObjectOfType<DayEndTransitionController>();
+
+            if (promotionCutscene == null)
+                promotionCutscene = FindObjectOfType<PromotionCutsceneController>(true);
 
             ResetSliderImmediate();
         }
@@ -121,7 +126,14 @@ namespace EmployeeHandbook.DailyTasks
             }
 
             waitingForTransition = true;
-            dayEndTransition.Play(dragStartDay, GoNextDayAfterTransition);
+            promotionCutsceneStarted = false;
+
+            int nextDay = dragStartDay + 1;
+            bool shouldPlayPromotion = promotionCutscene != null && promotionCutscene.ShouldPlayForDay(nextDay);
+            if (shouldPlayPromotion)
+                dayEndTransition.Play(dragStartDay, StartPromotionCutsceneBeforeDayEndFadeOut, GoNextDayAfterTransition);
+            else
+                dayEndTransition.Play(dragStartDay, GoNextDayAfterTransition);
         }
 
         private void PlayTransitionOnly()
@@ -133,6 +145,27 @@ namespace EmployeeHandbook.DailyTasks
         }
 
         private void GoNextDayAfterTransition()
+        {
+            if (promotionCutsceneStarted)
+                return;
+
+            if (!HasDayChangedSinceDragStarted())
+                FinishGoNextDay();
+            else
+                waitingForTransition = false;
+        }
+
+        private IEnumerator StartPromotionCutsceneBeforeDayEndFadeOut()
+        {
+            int nextDay = dragStartDay + 1;
+            if (promotionCutscene != null && promotionCutscene.ShouldPlayForDay(nextDay))
+            {
+                promotionCutsceneStarted = true;
+                yield return promotionCutscene.FadeInCovered(nextDay, FinishGoNextDay);
+            }
+        }
+
+        private void FinishGoNextDay()
         {
             waitingForTransition = false;
 

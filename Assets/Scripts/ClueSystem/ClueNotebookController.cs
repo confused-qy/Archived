@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -20,13 +21,21 @@ namespace EmployeeHandbook.ClueSystem
         [SerializeField] private bool bringToFrontOnOpen = true;
         [SerializeField] private bool closeOnOutsideClick = true;
         [SerializeField] private bool resetPagesOnOpen = true;
+        [SerializeField] private bool animateOnOpen = true;
+        [SerializeField] private float openAnimationDuration = 0.22f;
+        [SerializeField] private float openStartYOffset = -180f;
 
         private int lastOpenedFrame = -1;
         private bool openedByBrowser;
+        private RectTransform notebookRectTransform;
+        private CanvasGroup notebookCanvasGroup;
+        private Vector2 shownAnchoredPosition;
+        private Coroutine openAnimationRoutine;
 
         private void Start()
         {
             EnsureNotebookPanel();
+            CacheAnimationReferences();
 
             if (hideNotebookOnStart && notebookPanel != null)
                 notebookPanel.SetActive(false);
@@ -106,18 +115,24 @@ namespace EmployeeHandbook.ClueSystem
             if (!EnsureNotebookPanel())
                 return;
 
-            notebookPanel.SetActive(visible);
-
-            if (visible)
+            if (!visible)
             {
-                lastOpenedFrame = Time.frameCount;
-
-                if (resetPagesOnOpen)
-                    ResetNotebookPages();
+                StopOpenAnimation();
+                notebookPanel.SetActive(false);
+                return;
             }
 
-            if (visible && bringToFrontOnOpen)
+            notebookPanel.SetActive(true);
+
+            lastOpenedFrame = Time.frameCount;
+
+            if (resetPagesOnOpen)
+                ResetNotebookPages();
+
+            if (bringToFrontOnOpen)
                 notebookPanel.transform.SetAsLastSibling();
+
+            PlayOpenAnimation();
         }
 
         private bool EnsureNotebookPanel()
@@ -141,6 +156,105 @@ namespace EmployeeHandbook.ClueSystem
 
             Debug.LogWarning("ClueNotebookController 找不到 Notebook 面板，请在 Inspector 里拖入 Notebook Panel。", this);
             return false;
+        }
+
+        private void CacheAnimationReferences()
+        {
+            if (notebookPanel == null)
+                return;
+
+            if (notebookRectTransform == null)
+                notebookRectTransform = notebookPanel.GetComponent<RectTransform>();
+
+            if (notebookRectTransform != null && shownAnchoredPosition == Vector2.zero)
+                shownAnchoredPosition = notebookRectTransform.anchoredPosition;
+
+            if (notebookCanvasGroup == null)
+            {
+                notebookCanvasGroup = notebookPanel.GetComponent<CanvasGroup>();
+                if (notebookCanvasGroup == null)
+                    notebookCanvasGroup = notebookPanel.AddComponent<CanvasGroup>();
+            }
+        }
+
+        private void PlayOpenAnimation()
+        {
+            CacheAnimationReferences();
+
+            if (!animateOnOpen || notebookRectTransform == null)
+            {
+                if (notebookCanvasGroup != null)
+                    notebookCanvasGroup.alpha = 1f;
+                return;
+            }
+
+            StopOpenAnimation();
+            openAnimationRoutine = StartCoroutine(OpenAnimationRoutine());
+        }
+
+        private IEnumerator OpenAnimationRoutine()
+        {
+            Vector2 hiddenPosition = shownAnchoredPosition + new Vector2(0f, openStartYOffset);
+
+            if (notebookCanvasGroup != null)
+            {
+                notebookCanvasGroup.alpha = 0f;
+                notebookCanvasGroup.interactable = false;
+                notebookCanvasGroup.blocksRaycasts = false;
+            }
+
+            notebookRectTransform.anchoredPosition = hiddenPosition;
+
+            float elapsed = 0f;
+            while (elapsed < openAnimationDuration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                float t = openAnimationDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / openAnimationDuration);
+                t = EaseOutCubic(t);
+
+                notebookRectTransform.anchoredPosition = Vector2.LerpUnclamped(hiddenPosition, shownAnchoredPosition, t);
+
+                if (notebookCanvasGroup != null)
+                    notebookCanvasGroup.alpha = t;
+
+                yield return null;
+            }
+
+            notebookRectTransform.anchoredPosition = shownAnchoredPosition;
+
+            if (notebookCanvasGroup != null)
+            {
+                notebookCanvasGroup.alpha = 1f;
+                notebookCanvasGroup.interactable = true;
+                notebookCanvasGroup.blocksRaycasts = true;
+            }
+
+            openAnimationRoutine = null;
+        }
+
+        private void StopOpenAnimation()
+        {
+            if (openAnimationRoutine == null)
+                return;
+
+            StopCoroutine(openAnimationRoutine);
+            openAnimationRoutine = null;
+
+            if (notebookRectTransform != null)
+                notebookRectTransform.anchoredPosition = shownAnchoredPosition;
+
+            if (notebookCanvasGroup != null)
+            {
+                notebookCanvasGroup.alpha = 1f;
+                notebookCanvasGroup.interactable = true;
+                notebookCanvasGroup.blocksRaycasts = true;
+            }
+        }
+
+        private static float EaseOutCubic(float t)
+        {
+            t = Mathf.Clamp01(t);
+            return 1f - Mathf.Pow(1f - t, 3f);
         }
 
         private void ResetNotebookPages()

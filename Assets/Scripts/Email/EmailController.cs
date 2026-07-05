@@ -226,7 +226,6 @@ namespace EmployeeHandbook.Email
                 return;
 
             PlayMailClickSound(mail);
-            UnlockMailClueIfNeeded(mail);
             CompleteMailTaskIfNeeded(mail);
 
             selectedMailId = mail.mailId;
@@ -239,6 +238,7 @@ namespace EmployeeHandbook.Email
 
             SetContentText(mail.subject, mail.sender, mail.body);
             UpdateMailListItems();
+            UnlockMailClueIfNeeded(mail);
         }
 
         private void BindButtons()
@@ -447,10 +447,7 @@ namespace EmployeeHandbook.Email
         private void PlayMailClickSound(EmailMailData mail)
         {
             if (CanUnlockMailClue(mail))
-            {
-                PlayOneShot(clueMailFirstClickClip);
                 return;
-            }
 
             PlayOneShot(normalMailClickClip);
         }
@@ -460,7 +457,7 @@ namespace EmployeeHandbook.Email
             return mail != null &&
                    mail.unlockClueId > 0 &&
                    clueList != null &&
-                   !clueList.IsClueUnlocked(mail.unlockClueId);
+                   clueList.WillUnlockClue(mail.unlockClueId);
         }
 
         private void CompleteMailTaskIfNeeded(EmailMailData mail)

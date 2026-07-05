@@ -227,6 +227,14 @@ namespace EmployeeHandbook.Phone
             FeishuSfxPlayer.PlaySendMessageSfx();
         }
 
+        public bool WillUnlockClue(BossPhoneChoiceData choice)
+        {
+            return choice != null &&
+                   choice.unlockClueId > 0 &&
+                   clueList != null &&
+                   clueList.WillUnlockClue(choice.unlockClueId);
+        }
+
         private IEnumerator StartRingingAfterDelay(float delay)
         {
             if (delay > 0f)

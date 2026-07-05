@@ -4,7 +4,7 @@
       "clueId": 1,
       "name": "不要按那些键",
       "searchable": false,
-      "description": "",
+      "description": "这句提醒来自一封看似普通的入职邮件。它没有解释原因，只留下了对某些按键的回避，像是前人留下的求生经验。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "别按那些按键"
@@ -14,7 +14,7 @@
       "clueId": 2,
       "name": "员工转移",
       "searchable": false,
-      "description": "",
+      "description": "“转移完成”不是普通离职状态，而是公司用来描述员工被处理后的内部词汇。它听起来中性，却掩盖了人的消失。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "转移完成"
@@ -24,7 +24,7 @@
       "clueId": 3,
       "name": "重复的入职表",
       "searchable": false,
-      "description": "",
+      "description": "同一个人、相似日期、重复出现的入职资料，暗示魏艾的入职并不是第一次发生。表格里的重复，比错误更像一种循环。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "重复入职的员工1"
@@ -34,7 +34,7 @@
       "clueId": 4,
       "name": "创始人的初衷",
       "searchable": false,
-      "description": "",
+      "description": "MonkeyAI 最初并非为控制员工而生。创始阶段留下的文字里，还保留着保存记忆、延续陪伴的愿望。",
       "unlockClueIdOnSearch": 0,
       "aliases": []
     },
@@ -42,7 +42,7 @@
       "clueId": 5,
       "name": "Boss的来历",
       "searchable": false,
-      "description": "",
+      "description": "Boss 并不像普通主管那样只管理部门。他的来历与公司早期系统更深地纠缠在一起，也解释了他为何能触碰许多隐藏权限。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "Boss来历"
@@ -52,7 +52,7 @@
       "clueId": 6,
       "name": "林乔",
       "searchable": false,
-      "description": "",
+      "description": "林乔是多条异常记录的交汇点。她既像前员工，也像曾经深入项目核心的人，她的状态是理解公司真相的入口。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "林乔线1"
@@ -62,7 +62,7 @@
       "clueId": 7,
       "name": "稳定性复盘会议",
       "searchable": false,
-      "description": "",
+      "description": "稳定性复盘会议表面是新人管理流程，实际讨论的是如何评估、安抚和处理观察对象。会议名越平静，内容越不寻常。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "稳定性复盘会",
@@ -73,7 +73,7 @@
       "clueId": 8,
       "name": "魏艾的资料",
       "searchable": false,
-      "description": "",
+      "description": "魏艾的资料中出现了空白日期、三个月前的记录和损坏照片。它们共同指向一个问题：现在的魏艾并不是从零开始。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "重复入职的员工2"
@@ -83,7 +83,7 @@
       "clueId": 9,
       "name": "奇怪的文件夹",
       "searchable": false,
-      "description": "",
+      "description": "这个文件夹无法被正常删除，像是系统刻意留下的残渣。它保存的不是文件本身，而是某段流程曾经发生过的痕迹。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "删不掉的文件夹1",
@@ -119,7 +119,7 @@
       "clueId": 12,
       "name": "消失的补偿金",
       "searchable": false,
-      "description": "",
+      "description": "补偿金记录显示，有些员工在离开后并没有得到完整承诺。公司用流程词汇包裹了扣减，也压低了追问的声音。",
       "unlockClueIdOnSearch": 0,
       "aliases": []
     },
@@ -127,7 +127,7 @@
       "clueId": 13,
       "name": "C017归档缓存",
       "searchable": false,
-      "description": "",
+      "description": "C017 的归档缓存说明，魏艾早已被系统以编号记录。那些删不掉的缓存，是系统不愿承认却无法抹净的证据。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "删不掉的文件夹2",
@@ -150,7 +150,7 @@
       "clueId": 15,
       "name": "补偿克扣",
       "searchable": false,
-      "description": "",
+      "description": "补偿克扣不是单一财务问题，而是公司处理异常员工时的附带手段。它让“福利”听起来像承诺，实际却可能是控制。",
       "unlockClueIdOnSearch": 0,
       "aliases": []
     },
@@ -201,7 +201,7 @@
       "clueId": 20,
       "name": "早期实验记录",
       "searchable": false,
-      "description": "",
+      "description": "早期实验记录保留了项目最初的技术乐观：人格能够识别家属，保留率也很高。但记录中断的位置，正是理想开始偏移的地方。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "P-001"
@@ -222,7 +222,7 @@
       "clueId": 22,
       "name": "商业化",
       "searchable": false,
-      "description": "",
+      "description": "商业化让 MonkeyAI 从记忆延续工具变成了公司管理系统。预算和权限的变化，记录了理想被效率吞没的过程。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "MonkeyAI商业化"
@@ -232,7 +232,7 @@
       "clueId": 23,
       "name": "第17轮",
       "searchable": false,
-      "description": "",
+      "description": "第17轮不是普通编号，而是魏艾当前所处的循环轮次。前面的失败记录说明，她已经反复尝试过很多次。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "第十七轮"
@@ -265,7 +265,7 @@
       "clueId": 26,
       "name": "赞同派与反对派",
       "searchable": false,
-      "description": "",
+      "description": "会议和日志中能看到内部并非铁板一块。有人推动归档与优化，也有人对项目方向产生怀疑和反对。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "内部分歧",
@@ -276,7 +276,7 @@
       "clueId": 27,
       "name": "开发者日志",
       "searchable": false,
-      "description": "",
+      "description": "开发者日志保存着项目变质前后的缝隙。它不像正式文件那样修饰过，因此更接近当时留下的真实犹豫。",
       "unlockClueIdOnSearch": 0,
       "aliases": []
     },
@@ -284,7 +284,7 @@
       "clueId": 28,
       "name": "不存在的合规优化部",
       "searchable": false,
-      "description": "",
+      "description": "合规优化部在正式组织结构中并不存在，却能出现在系统操作链路里。它更像一个被包装过的影子部门。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "合规优化部"
@@ -294,7 +294,7 @@
       "clueId": 29,
       "name": "我的故事？",
       "searchable": false,
-      "description": "",
+      "description": "“我的故事？”指向魏艾最难接受的部分：她可能不只是玩家正在操作的新员工，而是这个系统的设计者之一。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "我的故事",
@@ -305,7 +305,7 @@
       "clueId": 30,
       "name": "员工观察与归档",
       "searchable": false,
-      "description": "",
+      "description": "员工观察与归档把公司对人的处理流程连在一起：观察、评估、诱导、归档，每一步都被写成可执行的管理动作。",
       "unlockClueIdOnSearch": 0,
       "aliases": [
         "员工观察与诱导",

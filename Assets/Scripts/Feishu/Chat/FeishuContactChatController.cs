@@ -485,6 +485,11 @@ namespace EmployeeHandbook.Feishu
                 manager.UnlockClue(clueId);
         }
 
+        public bool WillUnlockClue(int clueId)
+        {
+            return clueId > 0 && manager != null && manager.WillUnlockClue(clueId);
+        }
+
         private void CompleteConversation(FeishuConversationRuntimeState state)
         {
             if (state == null)

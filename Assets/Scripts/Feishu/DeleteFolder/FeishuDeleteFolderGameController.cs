@@ -130,9 +130,11 @@ namespace EmployeeHandbook.Feishu.DeleteFolder
             if (!canPlayToday || todayDeleteTask == null || todayFileSet == null)
                 return;
 
-            FeishuSfxPlayer.PlayDeleteClickSfx();
-
             bool correct = IsSelectionCorrect();
+            bool willUnlockClue = correct && WillUnlockSuccessClue();
+            if (!willUnlockClue)
+                FeishuSfxPlayer.PlayDeleteClickSfx();
+
             if (!correct)
             {
                 FeishuSfxPlayer.PlayDeleteFailureSfx();
@@ -159,7 +161,8 @@ namespace EmployeeHandbook.Feishu.DeleteFolder
             if (deleteButton != null)
                 deleteButton.gameObject.SetActive(false);
 
-            FeishuSfxPlayer.PlayDeleteSuccessSfx();
+            if (!willUnlockClue)
+                FeishuSfxPlayer.PlayDeleteSuccessSfx();
             ShowResult(successMessage);
         }
 
@@ -461,6 +464,8 @@ namespace EmployeeHandbook.Feishu.DeleteFolder
 
         private void UnlockSuccessClues()
         {
+            EnsureClueList();
+
             if (clueList == null || todayFileSet == null || todayFileSet.clueIdsOnSuccess == null)
                 return;
 
@@ -469,6 +474,31 @@ namespace EmployeeHandbook.Feishu.DeleteFolder
                 int clueId = todayFileSet.clueIdsOnSuccess[i];
                 if (clueId > 0)
                     clueList.UnlockClue(clueId);
+            }
+        }
+
+        private bool WillUnlockSuccessClue()
+        {
+            EnsureClueList();
+
+            return clueList != null &&
+                   todayFileSet != null &&
+                   clueList.WillUnlockAnyClue(todayFileSet.clueIdsOnSuccess);
+        }
+
+        private void EnsureClueList()
+        {
+            if (clueList != null)
+                return;
+
+            ClueNotebookClueList[] clueLists = Resources.FindObjectsOfTypeAll<ClueNotebookClueList>();
+            for (int i = 0; i < clueLists.Length; i++)
+            {
+                if (clueLists[i] != null && clueLists[i].gameObject.scene.IsValid())
+                {
+                    clueList = clueLists[i];
+                    return;
+                }
             }
         }
 

@@ -132,7 +132,8 @@ namespace EmployeeHandbook.OfficeGames
             SetSubmitInteractable(false);
             SetCellsInteractable(false);
             ShowResult(successMessage);
-            PlayOneShot(submitSuccessClip);
+            if (!WillUnlockSuccessClue())
+                PlayOneShot(submitSuccessClip);
             ReportCurrentTaskSuccess();
         }
 
@@ -473,6 +474,8 @@ namespace EmployeeHandbook.OfficeGames
 
         private void UnlockSuccessClues()
         {
+            EnsureClueList();
+
             if (clueList == null || currentTask.unlockClueIdsOnSuccess == null)
                 return;
 
@@ -481,6 +484,31 @@ namespace EmployeeHandbook.OfficeGames
                 int clueId = currentTask.unlockClueIdsOnSuccess[i];
                 if (clueId > 0)
                     clueList.UnlockClue(clueId);
+            }
+        }
+
+        private bool WillUnlockSuccessClue()
+        {
+            EnsureClueList();
+
+            return clueList != null &&
+                   currentTask != null &&
+                   clueList.WillUnlockAnyClue(currentTask.unlockClueIdsOnSuccess);
+        }
+
+        private void EnsureClueList()
+        {
+            if (clueList != null)
+                return;
+
+            ClueNotebookClueList[] clueLists = Resources.FindObjectsOfTypeAll<ClueNotebookClueList>();
+            for (int i = 0; i < clueLists.Length; i++)
+            {
+                if (clueLists[i] != null && clueLists[i].gameObject.scene.IsValid())
+                {
+                    clueList = clueLists[i];
+                    return;
+                }
             }
         }
 

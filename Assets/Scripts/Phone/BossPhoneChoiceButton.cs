@@ -45,9 +45,9 @@ namespace EmployeeHandbook.Phone
 
         private void Choose()
         {
-            if (controller != null)
+            if (controller != null && !controller.WillUnlockClue(choice))
                 controller.PlayDialogueClickSound();
-            else
+            else if (controller == null)
                 FeishuSfxPlayer.PlaySendMessageSfx();
 
             if (controller != null && choice != null)

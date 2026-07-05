@@ -12,6 +12,10 @@ namespace EmployeeHandbook.ClueSystem
             if (string.IsNullOrWhiteSpace(resourceName))
                 resourceName = DefaultResourceName;
 
+            resourceName = resourceName.Trim();
+            if (resourceName.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+                resourceName = resourceName.Substring(0, resourceName.Length - ".json".Length);
+
             TextAsset jsonAsset = Resources.Load<TextAsset>(resourceName);
             if (jsonAsset == null)
             {

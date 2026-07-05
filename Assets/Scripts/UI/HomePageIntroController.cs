@@ -24,6 +24,7 @@ namespace EmployeeHandbook.DailyTasks
         [TextArea(4, 10)]
         [SerializeField] private string introContent =
             "今天是 3 月 1 日。\n\n你叫魏艾。\n\n这是你入职 MonkeyAI 的第一天。\n\n请阅读员工手册，完成每日工作，并遵守所有公司规定。";
+        [SerializeField] private float delayBeforeTyping = 1f;
         [SerializeField] private float charactersPerSecond = 18f;
 
         [Header("Fade")]
@@ -110,6 +111,12 @@ namespace EmployeeHandbook.DailyTasks
 
         private IEnumerator TypeText()
         {
+            if (delayBeforeTyping > 0f)
+                yield return new WaitForSecondsRealtime(delayBeforeTyping);
+
+            if (finishedTyping)
+                yield break;
+
             if (charactersPerSecond <= 0f)
             {
                 SetIntroText(introContent);

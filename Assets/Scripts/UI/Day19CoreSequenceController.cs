@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 namespace EmployeeHandbook.DailyTasks
 {
@@ -39,11 +40,43 @@ namespace EmployeeHandbook.DailyTasks
 
         [Header("Ending CG")]
         [SerializeField] private GameObject endingRoot;
+        [Tooltip("只放结尾视频画面的物体，例如 VideoRawImage。GameOverRoot/CreditsRoot 如果在 EndingRoot 下面，不要拖到这里。")]
+        [SerializeField] private GameObject endingVideoDisplayRoot;
+        [SerializeField] private CanvasGroup endingCanvasGroup;
+        [SerializeField] private VideoPlayer endingVideoPlayer;
+        [SerializeField] private VideoClip exposeEndingVideo;
+        [SerializeField] private VideoClip closeInvestigationEndingVideo;
+        [SerializeField] private VideoClip reformEndingVideo;
+        [SerializeField] private VideoClip fallbackEndingVideo;
+        [SerializeField] private float endingVideoFadeInDuration = 0.25f;
+        [SerializeField] private float endingVideoFadeOutDuration = 0.5f;
         [SerializeField] private GameObject[] exposeEndingSlides;
         [SerializeField] private GameObject[] closeInvestigationEndingSlides;
         [SerializeField] private GameObject[] reformEndingSlides;
         [SerializeField] private GameObject[] fallbackEndingSlides;
         [SerializeField] private float endingSlideDuration = 1.5f;
+
+        [Header("Game Over Text")]
+        [SerializeField] private GameObject gameOverRoot;
+        [SerializeField] private CanvasGroup gameOverCanvasGroup;
+        [SerializeField] private Text gameOverText;
+        [SerializeField] private TMP_Text gameOverTmpText;
+        [SerializeField] private string gameOverMessage = "游戏结束，感谢你的游玩。";
+        [SerializeField] private float gameOverFadeInDuration = 0.25f;
+        [SerializeField] private float gameOverDelayBeforeTyping = 0.6f;
+        [SerializeField] private float gameOverCharacterInterval = 0.06f;
+        [SerializeField] private float gameOverHoldDuration = 1f;
+        [SerializeField] private AudioSource gameOverTypingAudioSource;
+
+        [Header("Credits")]
+        [SerializeField] private GameObject creditsRoot;
+        [SerializeField] private CanvasGroup creditsCanvasGroup;
+        [SerializeField] private ScrollRect creditsScrollRect;
+        [SerializeField] private RectTransform creditsContent;
+        [SerializeField] private float creditsStartY = -520f;
+        [SerializeField] private float creditsEndY = 1200f;
+        [SerializeField] private float creditsDuration = 22f;
+        [SerializeField] private float creditsFadeInDuration = 0.35f;
 
         [Header("Events")]
         [SerializeField] private UnityEvent onSequenceStarted;
@@ -53,6 +86,8 @@ namespace EmployeeHandbook.DailyTasks
         private Coroutine sequenceRoutine;
         private bool subscribed;
         private bool hasTriggered;
+        private bool creditsScrollRectOriginalEnabled;
+        private bool creditsScrollRectWasPrepared;
         private string selectedEndingId = string.Empty;
 
         public string SelectedEndingId
@@ -149,9 +184,32 @@ namespace EmployeeHandbook.DailyTasks
             if (GameManager.Instance != null && GameManager.Instance.CurrentState != null && GameManager.Instance.CurrentState.currentDay == TriggerDay)
                 GameManager.Instance.NextDay();
 
-            GameObject[] slides = GetEndingSlides(endingId);
-            yield return PlaySlides(endingRoot, slides, endingSlideDuration);
+            VideoClip clip = GetEndingVideo(endingId);
+            if (clip != null)
+                yield return PlayEndingVideo(clip);
+            else
+            {
+                GameObject[] slides = GetEndingSlides(endingId);
+                yield return PlaySlides(endingRoot, slides, endingSlideDuration);
+            }
+
+            yield return PlayGameOverText(creditsRoot == null);
+            yield return PlayCredits();
             onEndingFinished?.Invoke();
+        }
+
+        private VideoClip GetEndingVideo(string endingId)
+        {
+            if (endingId == "Expose" && exposeEndingVideo != null)
+                return exposeEndingVideo;
+
+            if (endingId == "CloseInvestigation" && closeInvestigationEndingVideo != null)
+                return closeInvestigationEndingVideo;
+
+            if (endingId == "Reform" && reformEndingVideo != null)
+                return reformEndingVideo;
+
+            return fallbackEndingVideo;
         }
 
         private GameObject[] GetEndingSlides(string endingId)
@@ -192,6 +250,168 @@ namespace EmployeeHandbook.DailyTasks
                 if (i < slides.Length - 1)
                     yield return HideSlide(slide);
             }
+        }
+
+        private IEnumerator PlayEndingVideo(VideoClip clip)
+        {
+            if (endingRoot != null)
+                endingRoot.SetActive(true);
+
+            if (endingVideoDisplayRoot != null)
+                endingVideoDisplayRoot.SetActive(true);
+
+            if (endingCanvasGroup == null && endingRoot != null)
+                endingCanvasGroup = GetOrAddCanvasGroup(endingRoot);
+
+            if (endingCanvasGroup != null)
+            {
+                endingCanvasGroup.alpha = 0f;
+                endingCanvasGroup.interactable = false;
+                endingCanvasGroup.blocksRaycasts = false;
+            }
+
+            if (endingVideoPlayer == null)
+                yield break;
+
+            endingVideoPlayer.Stop();
+            endingVideoPlayer.clip = clip;
+            endingVideoPlayer.isLooping = false;
+            endingVideoPlayer.Prepare();
+
+            while (!endingVideoPlayer.isPrepared)
+                yield return null;
+
+            endingVideoPlayer.Play();
+
+            if (endingCanvasGroup != null)
+                yield return FadeCanvasGroup(endingCanvasGroup, 0f, 1f, endingVideoFadeInDuration);
+
+            while (endingVideoPlayer != null && endingVideoPlayer.isPlaying)
+                yield return null;
+
+            if (endingCanvasGroup != null)
+                yield return FadeCanvasGroup(endingCanvasGroup, endingCanvasGroup.alpha, 0f, endingVideoFadeOutDuration);
+
+            if (endingVideoPlayer != null)
+            {
+                endingVideoPlayer.Stop();
+                if (endingVideoPlayer.targetTexture != null)
+                    endingVideoPlayer.targetTexture.Release();
+            }
+
+            if (endingVideoDisplayRoot != null)
+                endingVideoDisplayRoot.SetActive(false);
+
+            if (endingRoot != null && !HasPostEndingUiUnderEndingRoot())
+                endingRoot.SetActive(false);
+            else if (endingCanvasGroup != null)
+                endingCanvasGroup.alpha = 1f;
+        }
+
+        private IEnumerator PlayGameOverText(bool fadeOutAfterHold)
+        {
+            if (gameOverRoot == null)
+                yield break;
+
+            EnsureEndingParentVisible(gameOverRoot);
+            if (endingVideoDisplayRoot != null)
+                endingVideoDisplayRoot.SetActive(false);
+
+            gameOverRoot.SetActive(true);
+
+            if (gameOverCanvasGroup == null)
+                gameOverCanvasGroup = GetOrAddCanvasGroup(gameOverRoot);
+
+            SetGameOverText(string.Empty);
+            yield return FadeCanvasGroup(gameOverCanvasGroup, 0f, 1f, gameOverFadeInDuration);
+
+            if (gameOverDelayBeforeTyping > 0f)
+                yield return new WaitForSecondsRealtime(gameOverDelayBeforeTyping);
+
+            PlayGameOverTypingAudio();
+
+            if (gameOverCharacterInterval <= 0f)
+                SetGameOverText(gameOverMessage);
+            else
+            {
+                for (int i = 0; i <= gameOverMessage.Length; i++)
+                {
+                    SetGameOverText(gameOverMessage.Substring(0, i));
+                    yield return new WaitForSecondsRealtime(gameOverCharacterInterval);
+                }
+            }
+
+            StopGameOverTypingAudio();
+
+            if (gameOverHoldDuration > 0f)
+                yield return new WaitForSecondsRealtime(gameOverHoldDuration);
+
+            if (fadeOutAfterHold)
+            {
+                yield return FadeCanvasGroup(gameOverCanvasGroup, gameOverCanvasGroup.alpha, 0f, gameOverFadeInDuration);
+                gameOverRoot.SetActive(false);
+            }
+        }
+
+        private IEnumerator PlayCredits()
+        {
+            if (creditsRoot == null)
+                yield break;
+
+            EnsureEndingParentVisible(creditsRoot);
+            if (endingVideoDisplayRoot != null)
+                endingVideoDisplayRoot.SetActive(false);
+
+            if (creditsCanvasGroup == null)
+                creditsCanvasGroup = GetOrAddCanvasGroup(creditsRoot);
+
+            creditsCanvasGroup.alpha = 0f;
+            creditsCanvasGroup.interactable = false;
+            creditsCanvasGroup.blocksRaycasts = false;
+
+            PrepareCreditsScrollRect();
+
+            if (creditsContent != null)
+                SetCreditsContentY(creditsStartY);
+
+            creditsRoot.SetActive(true);
+            Canvas.ForceUpdateCanvases();
+
+            if (creditsContent != null)
+                LayoutRebuilder.ForceRebuildLayoutImmediate(creditsContent);
+
+            if (creditsContent != null)
+                SetCreditsContentY(creditsStartY);
+
+            Canvas.ForceUpdateCanvases();
+            yield return null;
+
+            if (creditsContent != null)
+                SetCreditsContentY(creditsStartY);
+
+            yield return FadeCanvasGroup(creditsCanvasGroup, 0f, 1f, creditsFadeInDuration);
+
+            if (gameOverRoot != null && gameOverRoot.activeSelf)
+            {
+                if (gameOverCanvasGroup != null)
+                    gameOverCanvasGroup.alpha = 0f;
+
+                gameOverRoot.SetActive(false);
+            }
+
+            float elapsed = 0f;
+            while (elapsed < creditsDuration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                float t = creditsDuration <= 0f ? 1f : Mathf.Clamp01(elapsed / creditsDuration);
+
+                if (creditsContent != null)
+                    SetCreditsContentY(Mathf.Lerp(creditsStartY, creditsEndY, t));
+
+                yield return null;
+            }
+
+            RestoreCreditsScrollRect();
         }
 
         private IEnumerator PlayIntroSlides()
@@ -376,12 +596,95 @@ namespace EmployeeHandbook.DailyTasks
             }
 
             if (endingRoot != null)
+            {
+                CanvasGroup group = endingCanvasGroup != null ? endingCanvasGroup : GetOrAddCanvasGroup(endingRoot);
+                group.alpha = 0f;
                 endingRoot.SetActive(false);
+            }
+
+            if (endingVideoDisplayRoot != null)
+                endingVideoDisplayRoot.SetActive(false);
+
+            if (gameOverRoot != null)
+            {
+                CanvasGroup group = gameOverCanvasGroup != null ? gameOverCanvasGroup : GetOrAddCanvasGroup(gameOverRoot);
+                group.alpha = 0f;
+                gameOverRoot.SetActive(false);
+            }
+
+            if (creditsRoot != null)
+            {
+                CanvasGroup group = creditsCanvasGroup != null ? creditsCanvasGroup : GetOrAddCanvasGroup(creditsRoot);
+                group.alpha = 0f;
+                creditsRoot.SetActive(false);
+            }
+
+            RestoreCreditsScrollRect();
 
             HideSlides(exposeEndingSlides);
             HideSlides(closeInvestigationEndingSlides);
             HideSlides(reformEndingSlides);
             HideSlides(fallbackEndingSlides);
+        }
+
+        private void SetGameOverText(string value)
+        {
+            if (gameOverText != null)
+                gameOverText.text = value;
+
+            if (gameOverTmpText != null)
+                gameOverTmpText.text = value;
+        }
+
+        private void PlayGameOverTypingAudio()
+        {
+            if (gameOverTypingAudioSource == null || gameOverTypingAudioSource.clip == null)
+                return;
+
+            gameOverTypingAudioSource.Stop();
+            gameOverTypingAudioSource.loop = true;
+            gameOverTypingAudioSource.Play();
+        }
+
+        private void StopGameOverTypingAudio()
+        {
+            if (gameOverTypingAudioSource == null)
+                return;
+
+            gameOverTypingAudioSource.Stop();
+        }
+
+        private void SetCreditsContentY(float y)
+        {
+            if (creditsContent == null)
+                return;
+
+            Vector2 position = creditsContent.anchoredPosition;
+            position.y = y;
+            creditsContent.anchoredPosition = position;
+        }
+
+        private void PrepareCreditsScrollRect()
+        {
+            if (creditsScrollRect == null)
+                return;
+
+            creditsScrollRectOriginalEnabled = creditsScrollRect.enabled;
+            creditsScrollRectWasPrepared = true;
+            creditsScrollRect.StopMovement();
+            creditsScrollRect.velocity = Vector2.zero;
+            creditsScrollRect.enabled = false;
+        }
+
+        private void RestoreCreditsScrollRect()
+        {
+            if (creditsScrollRect == null || !creditsScrollRectWasPrepared)
+                return;
+
+            creditsScrollRect.StopMovement();
+            creditsScrollRect.velocity = Vector2.zero;
+            creditsScrollRect.enabled = creditsScrollRectOriginalEnabled;
+            creditsScrollRectWasPrepared = false;
         }
 
         private void HideSlides(GameObject[] slides)
@@ -407,6 +710,37 @@ namespace EmployeeHandbook.DailyTasks
                 group = target.AddComponent<CanvasGroup>();
 
             return group;
+        }
+
+        private void EnsureEndingParentVisible(GameObject child)
+        {
+            if (endingRoot == null || child == null)
+                return;
+
+            if (child == endingRoot || child.transform.IsChildOf(endingRoot.transform))
+            {
+                endingRoot.SetActive(true);
+
+                if (endingCanvasGroup == null)
+                    endingCanvasGroup = GetOrAddCanvasGroup(endingRoot);
+
+                endingCanvasGroup.alpha = 1f;
+                endingCanvasGroup.interactable = false;
+                endingCanvasGroup.blocksRaycasts = false;
+            }
+        }
+
+        private bool HasPostEndingUiUnderEndingRoot()
+        {
+            if (endingRoot == null)
+                return false;
+
+            return IsUnderEndingRoot(gameOverRoot) || IsUnderEndingRoot(creditsRoot);
+        }
+
+        private bool IsUnderEndingRoot(GameObject target)
+        {
+            return target != null && (target == endingRoot || target.transform.IsChildOf(endingRoot.transform));
         }
 
         private IEnumerator FadeCanvasGroup(CanvasGroup group, float fromAlpha, float toAlpha, float duration)

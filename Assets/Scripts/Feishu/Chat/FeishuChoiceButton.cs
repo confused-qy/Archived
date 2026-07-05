@@ -59,7 +59,8 @@ namespace EmployeeHandbook.Feishu
 
         private void Choose()
         {
-            FeishuSfxPlayer.PlaySendMessageSfx();
+            if (!WillUnlockClue())
+                FeishuSfxPlayer.PlaySendMessageSfx();
 
             if (chatController != null && choice != null)
             {
@@ -69,6 +70,17 @@ namespace EmployeeHandbook.Feishu
 
             if (contactChatController != null && choice != null)
                 contactChatController.Choose(choice);
+        }
+
+        private bool WillUnlockClue()
+        {
+            if (choice == null || choice.unlockClueId <= 0)
+                return false;
+
+            if (chatController != null)
+                return chatController.WillUnlockClue(choice.unlockClueId);
+
+            return contactChatController != null && contactChatController.WillUnlockClue(choice.unlockClueId);
         }
 
         private void SetText(string value)

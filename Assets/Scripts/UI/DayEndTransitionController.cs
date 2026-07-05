@@ -48,6 +48,16 @@ namespace EmployeeHandbook.DailyTasks
 
         public void Play(int completedDay, Action onFinished)
         {
+            Play(completedDay, null, onFinished);
+        }
+
+        public void Play(int completedDay, Action beforeFadeOut, Action onFinished)
+        {
+            Play(completedDay, beforeFadeOut != null ? () => InvokeActionRoutine(beforeFadeOut) : null, onFinished);
+        }
+
+        public void Play(int completedDay, Func<IEnumerator> beforeFadeOutRoutine, Action onFinished)
+        {
             if (completedDay < 1 || completedDay > slashLines.Length)
             {
                 Debug.LogWarning("DayEndTransitionController 收到无效日期：" + completedDay, this);
@@ -58,7 +68,7 @@ namespace EmployeeHandbook.DailyTasks
             if (playRoutine != null)
                 StopCoroutine(playRoutine);
 
-            playRoutine = StartCoroutine(PlayRoutine(completedDay, onFinished));
+            playRoutine = StartCoroutine(PlayRoutine(completedDay, beforeFadeOutRoutine, onFinished));
         }
 
         public void HideImmediately()
@@ -78,7 +88,7 @@ namespace EmployeeHandbook.DailyTasks
             ResetAllSlashScales();
         }
 
-        private IEnumerator PlayRoutine(int completedDay, Action onFinished)
+        private IEnumerator PlayRoutine(int completedDay, Func<IEnumerator> beforeFadeOutRoutine, Action onFinished)
         {
             EnsureCanvasGroup();
             CacheSlashLines();
@@ -142,6 +152,9 @@ namespace EmployeeHandbook.DailyTasks
             if (holdDuration > 0f)
                 yield return new WaitForSecondsRealtime(holdDuration);
 
+            if (beforeFadeOutRoutine != null)
+                yield return beforeFadeOutRoutine();
+
             PlayOneShot(hideSound);
 
             elapsed = 0f;
@@ -163,6 +176,12 @@ namespace EmployeeHandbook.DailyTasks
             HideImmediately();
             playRoutine = null;
             onFinished?.Invoke();
+        }
+
+        private IEnumerator InvokeActionRoutine(Action action)
+        {
+            action?.Invoke();
+            yield break;
         }
 
         private RectTransform GetSlashLine(int day)

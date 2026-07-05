@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using EmployeeHandbook.ClueSystem;
+using DailyGameManager = EmployeeHandbook.DailyTasks.GameManager;
 
 namespace EmployeeHandbook.Browser
 {
@@ -27,6 +28,8 @@ namespace EmployeeHandbook.Browser
         [SerializeField] private string emptyQueryText = "";
         [SerializeField] private string noQueryMessage = "请输入内容。";
         [SerializeField] private string missingDescriptionMessage = "没有找到相关搜索结果。";
+        [SerializeField] private int unlockDay = 5;
+        [SerializeField] private string lockedSystemMessage = "权限不足，不可使用公司查询系统。";
         [SerializeField] private bool resetWhenBrowserOpens = true;
         [SerializeField] private bool closeNotebookWhenBrowserCloses = true;
         [HideInInspector] [SerializeField] private bool closeNotebookAfterSelect;
@@ -109,6 +112,12 @@ namespace EmployeeHandbook.Browser
 
         public void SearchCurrentQuery()
         {
+            if (IsSearchSystemLocked())
+            {
+                SetResultText(lockedSystemMessage);
+                return;
+            }
+
             string query = GetQueryText();
             if (string.IsNullOrWhiteSpace(query))
             {
@@ -247,6 +256,19 @@ namespace EmployeeHandbook.Browser
                 return;
 
             clueList.UnlockClue(definition.unlockClueIdOnSearch);
+        }
+
+        private bool IsSearchSystemLocked()
+        {
+            return GetCurrentDay() < unlockDay;
+        }
+
+        private int GetCurrentDay()
+        {
+            if (DailyGameManager.Instance != null && DailyGameManager.Instance.CurrentState != null)
+                return DailyGameManager.Instance.CurrentState.currentDay;
+
+            return 1;
         }
 
         [System.Serializable]

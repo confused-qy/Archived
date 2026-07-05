@@ -141,8 +141,33 @@ namespace EmployeeHandbook.Feishu
             if (clueId <= 0)
                 return;
 
+            EnsureClueList();
+
             if (clueList != null)
                 clueList.UnlockClue(clueId);
+        }
+
+        public bool WillUnlockClue(int clueId)
+        {
+            EnsureClueList();
+
+            return clueId > 0 && clueList != null && clueList.WillUnlockClue(clueId);
+        }
+
+        private void EnsureClueList()
+        {
+            if (clueList != null)
+                return;
+
+            ClueNotebookClueList[] clueLists = Resources.FindObjectsOfTypeAll<ClueNotebookClueList>();
+            for (int i = 0; i < clueLists.Length; i++)
+            {
+                if (clueLists[i] != null && clueLists[i].gameObject.scene.IsValid())
+                {
+                    clueList = clueLists[i];
+                    return;
+                }
+            }
         }
 
         public void RefreshConversationButtons()

@@ -4,12 +4,42 @@
       "deleteFolderTaskName": "删除临时夹",
       "useContainsMatch": false,
       "files": [
-        { "fileId": "d03_01", "fileName": "今日截图缓存", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d03_02", "fileName": "正式报表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d03_03", "fileName": "入职资料", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d03_04", "fileName": "测试导出包", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d03_05", "fileName": "邮件备份", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d03_06", "fileName": "临时压缩包", "shouldDelete": true, "spriteIndex": -1 }
+        {
+          "fileId": "d03_01",
+          "fileName": "今日截图缓存",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d03_02",
+          "fileName": "正式报表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d03_03",
+          "fileName": "入职资料",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d03_04",
+          "fileName": "测试导出包",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d03_05",
+          "fileName": "邮件备份",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d03_06",
+          "fileName": "临时压缩包",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        }
       ],
       "clueIdsOnSuccess": []
     },
@@ -17,12 +47,42 @@
       "deleteFolderTaskName": "删除Word文件",
       "useContainsMatch": false,
       "files": [
-        { "fileId": "d04_01", "fileName": "旧版会议纪要", "shouldDelete": true, "spriteIndex": 0 },
-        { "fileId": "d04_02", "fileName": "审核清单", "shouldDelete": false, "spriteIndex": 1 },
-        { "fileId": "d04_03", "fileName": "草稿说明文档", "shouldDelete": true, "spriteIndex": 0 },
-        { "fileId": "d04_04", "fileName": "发票汇总", "shouldDelete": false, "spriteIndex": 2 },
-        { "fileId": "d04_05", "fileName": "废弃通知", "shouldDelete": true, "spriteIndex": 0 },
-        { "fileId": "d04_06", "fileName": "员工名单", "shouldDelete": false, "spriteIndex": 1 }
+        {
+          "fileId": "d04_01",
+          "fileName": "旧版会议纪要",
+          "shouldDelete": true,
+          "spriteIndex": 0
+        },
+        {
+          "fileId": "d04_02",
+          "fileName": "审核清单",
+          "shouldDelete": false,
+          "spriteIndex": 1
+        },
+        {
+          "fileId": "d04_03",
+          "fileName": "草稿说明文档",
+          "shouldDelete": true,
+          "spriteIndex": 0
+        },
+        {
+          "fileId": "d04_04",
+          "fileName": "发票汇总",
+          "shouldDelete": false,
+          "spriteIndex": 2
+        },
+        {
+          "fileId": "d04_05",
+          "fileName": "废弃通知",
+          "shouldDelete": true,
+          "spriteIndex": 0
+        },
+        {
+          "fileId": "d04_06",
+          "fileName": "员工名单",
+          "shouldDelete": false,
+          "spriteIndex": 1
+        }
       ],
       "clueIdsOnSuccess": []
     },
@@ -30,12 +90,42 @@
       "deleteFolderTaskName": "删除过期文件",
       "useContainsMatch": false,
       "files": [
-        { "fileId": "d05_01", "fileName": "过期申请表", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d05_02", "fileName": "今日任务表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d05_03", "fileName": "旧版模板", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d05_04", "fileName": "合同扫描件", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d05_05", "fileName": "部门通讯录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d05_06", "fileName": "上月临时表", "shouldDelete": true, "spriteIndex": -1 }
+        {
+          "fileId": "d05_01",
+          "fileName": "过期申请表",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d05_02",
+          "fileName": "今日任务表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d05_03",
+          "fileName": "旧版模板",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d05_04",
+          "fileName": "合同扫描件",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d05_05",
+          "fileName": "部门通讯录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d05_06",
+          "fileName": "上月临时表",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        }
       ],
       "clueIdsOnSuccess": []
     },
@@ -43,12 +133,42 @@
       "deleteFolderTaskName": "删除过期夹",
       "useContainsMatch": false,
       "files": [
-        { "fileId": "d06_01", "fileName": "入职材料", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d06_02", "fileName": "旧培训包", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d06_03", "fileName": "项目附件", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d06_04", "fileName": "过期素材夹", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d06_05", "fileName": "临时下载夹", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d06_06", "fileName": "本周排班", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d06_01",
+          "fileName": "入职材料",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d06_02",
+          "fileName": "旧培训包",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d06_03",
+          "fileName": "项目附件",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d06_04",
+          "fileName": "过期素材夹",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d06_05",
+          "fileName": "临时下载夹",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d06_06",
+          "fileName": "本周排班",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ],
       "clueIdsOnSuccess": []
     },
@@ -56,38 +176,132 @@
       "deleteFolderTaskName": "清除空文件夹",
       "useContainsMatch": false,
       "files": [
-        { "fileId": "d07_01", "fileName": "空白归档", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d07_02", "fileName": "报销凭证", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d07_03", "fileName": "会议纪要", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d07_04", "fileName": "工作交接", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d07_05", "fileName": "未命名文件夹", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d07_06", "fileName": "空附件包", "shouldDelete": true, "spriteIndex": -1 }
+        {
+          "fileId": "d07_01",
+          "fileName": "空白归档",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d07_02",
+          "fileName": "报销凭证",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d07_03",
+          "fileName": "会议纪要",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d07_04",
+          "fileName": "工作交接",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d07_05",
+          "fileName": "未命名文件夹",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d07_06",
+          "fileName": "空附件包",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        }
       ],
-      "clueIdsOnSuccess": []
+      "clueIdsOnSuccess": [
+        9
+      ]
     },
     {
       "deleteFolderTaskName": "清理重复文件",
       "useContainsMatch": false,
       "files": [
-        { "fileId": "d09_01", "fileName": "原始报表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d09_02", "fileName": "报表副本", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d09_03", "fileName": "通知副本", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d09_04", "fileName": "正式通知", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d09_05", "fileName": "最新名单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d09_06", "fileName": "名单副本", "shouldDelete": true, "spriteIndex": -1 }
+        {
+          "fileId": "d09_01",
+          "fileName": "原始报表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d09_02",
+          "fileName": "报表副本",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d09_03",
+          "fileName": "通知副本",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d09_04",
+          "fileName": "正式通知",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d09_05",
+          "fileName": "最新名单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d09_06",
+          "fileName": "名单副本",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        }
       ],
-      "clueIdsOnSuccess": []
+      "clueIdsOnSuccess": [
+        13
+      ]
     },
     {
       "deleteFolderTaskName": "删除会议文件",
       "useContainsMatch": false,
       "files": [
-        { "fileId": "d13_01", "fileName": "旧会议录音", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d13_02", "fileName": "正式会议纪要", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d13_03", "fileName": "参会名单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d13_04", "fileName": "临时会议图", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d13_05", "fileName": "废弃会议稿", "shouldDelete": true, "spriteIndex": -1 },
-        { "fileId": "d13_06", "fileName": "会议审批单", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d13_01",
+          "fileName": "旧会议录音",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d13_02",
+          "fileName": "正式会议纪要",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d13_03",
+          "fileName": "参会名单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d13_04",
+          "fileName": "临时会议图",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d13_05",
+          "fileName": "废弃会议稿",
+          "shouldDelete": true,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d13_06",
+          "fileName": "会议审批单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ],
       "clueIdsOnSuccess": []
     }
@@ -96,144 +310,534 @@
     {
       "day": 1,
       "files": [
-        { "fileId": "d01_01", "fileName": "入职流程说明", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d01_02", "fileName": "新人账号清单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d01_03", "fileName": "部门通讯录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d01_04", "fileName": "办公系统指南", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d01_05", "fileName": "考勤规则", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d01_06", "fileName": "实习生须知", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d01_01",
+          "fileName": "入职流程说明",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d01_02",
+          "fileName": "新人账号清单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d01_03",
+          "fileName": "部门通讯录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d01_04",
+          "fileName": "办公系统指南",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d01_05",
+          "fileName": "考勤规则",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d01_06",
+          "fileName": "实习生须知",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 2,
       "files": [
-        { "fileId": "d02_01", "fileName": "台账核对表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d02_02", "fileName": "补录信息清单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d02_03", "fileName": "新人登记附件", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d02_04", "fileName": "部门工号表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d02_05", "fileName": "系统权限说明", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d02_06", "fileName": "数据录入模板", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d02_01",
+          "fileName": "台账核对表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d02_02",
+          "fileName": "补录信息清单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d02_03",
+          "fileName": "新人登记附件",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d02_04",
+          "fileName": "部门工号表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d02_05",
+          "fileName": "系统权限说明",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d02_06",
+          "fileName": "数据录入模板",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 8,
       "files": [
-        { "fileId": "d08_01", "fileName": "邮件整理记录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d08_02", "fileName": "归档文件索引", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d08_03", "fileName": "记录表模板", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d08_04", "fileName": "本周交接表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d08_05", "fileName": "流程截图", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d08_06", "fileName": "附件目录", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d08_01",
+          "fileName": "邮件整理记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d08_02",
+          "fileName": "归档文件索引",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d08_03",
+          "fileName": "记录表模板",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d08_04",
+          "fileName": "本周交接表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d08_05",
+          "fileName": "流程截图",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d08_06",
+          "fileName": "附件目录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 10,
       "files": [
-        { "fileId": "d10_01", "fileName": "查看报告附件", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d10_02", "fileName": "历史台账目录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d10_03", "fileName": "归档申请表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d10_04", "fileName": "部门周报", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d10_05", "fileName": "审核意见稿", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d10_06", "fileName": "邮件附件包", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d10_01",
+          "fileName": "查看报告附件",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d10_02",
+          "fileName": "历史台账目录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d10_03",
+          "fileName": "归档申请表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d10_04",
+          "fileName": "部门周报",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d10_05",
+          "fileName": "审核意见稿",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d10_06",
+          "fileName": "邮件附件包",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 11,
       "files": [
-        { "fileId": "d11_01", "fileName": "离职员工名单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d11_02", "fileName": "部门资料同步", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d11_03", "fileName": "离职档案目录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d11_04", "fileName": "权限回收表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d11_05", "fileName": "交接确认单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d11_06", "fileName": "审批记录", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d11_01",
+          "fileName": "离职员工名单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d11_02",
+          "fileName": "部门资料同步",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d11_03",
+          "fileName": "离职档案目录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d11_04",
+          "fileName": "权限回收表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d11_05",
+          "fileName": "交接确认单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d11_06",
+          "fileName": "审批记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 12,
       "files": [
-        { "fileId": "d12_01", "fileName": "工作邮件备份", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d12_02", "fileName": "制度确认单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d12_03", "fileName": "制度更新记录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d12_04", "fileName": "培训签收表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d12_05", "fileName": "流程变更说明", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d12_06", "fileName": "部门公告", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d12_01",
+          "fileName": "工作邮件备份",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d12_02",
+          "fileName": "制度确认单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d12_03",
+          "fileName": "制度更新记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d12_04",
+          "fileName": "培训签收表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d12_05",
+          "fileName": "流程变更说明",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d12_06",
+          "fileName": "部门公告",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 14,
       "files": [
-        { "fileId": "d14_01", "fileName": "立项资料包", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d14_02", "fileName": "早期实验记录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d14_03", "fileName": "核对名单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d14_04", "fileName": "项目排期表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d14_05", "fileName": "附件清单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d14_06", "fileName": "会议摘要", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d14_01",
+          "fileName": "立项资料包",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d14_02",
+          "fileName": "早期实验记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d14_03",
+          "fileName": "核对名单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d14_04",
+          "fileName": "项目排期表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d14_05",
+          "fileName": "附件清单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d14_06",
+          "fileName": "会议摘要",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 15,
       "files": [
-        { "fileId": "d15_01", "fileName": "保密协议", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d15_02", "fileName": "会议纪要汇总", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d15_03", "fileName": "项目预算表", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d15_04", "fileName": "预算附件", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d15_05", "fileName": "审批流记录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d15_06", "fileName": "风险备注", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d15_01",
+          "fileName": "保密协议",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d15_02",
+          "fileName": "会议纪要汇总",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d15_03",
+          "fileName": "项目预算表",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d15_04",
+          "fileName": "预算附件",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d15_05",
+          "fileName": "审批流记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d15_06",
+          "fileName": "风险备注",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 16,
       "files": [
-        { "fileId": "d16_01", "fileName": "最终评估报告", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d16_02", "fileName": "身份恢复记录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d16_03", "fileName": "当前轮次审核", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d16_04", "fileName": "结项材料", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d16_05", "fileName": "交付清单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d16_06", "fileName": "复盘记录", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d16_01",
+          "fileName": "最终评估报告",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d16_02",
+          "fileName": "身份恢复记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d16_03",
+          "fileName": "当前轮次审核",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d16_04",
+          "fileName": "结项材料",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d16_05",
+          "fileName": "交付清单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d16_06",
+          "fileName": "复盘记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 17,
       "files": [
-        { "fileId": "d17_01", "fileName": "空白工作日志", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d17_02", "fileName": "系统归档包", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d17_03", "fileName": "旧日程截图", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d17_04", "fileName": "权限说明", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d17_05", "fileName": "人员备注", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d17_06", "fileName": "系统提示记录", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d17_01",
+          "fileName": "空白工作日志",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d17_02",
+          "fileName": "系统归档包",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d17_03",
+          "fileName": "旧日程截图",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d17_04",
+          "fileName": "权限说明",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d17_05",
+          "fileName": "人员备注",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d17_06",
+          "fileName": "系统提示记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 18,
       "files": [
-        { "fileId": "d18_01", "fileName": "异常访问日志", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d18_02", "fileName": "同步失败记录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d18_03", "fileName": "缓存目录索引", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d18_04", "fileName": "审批消息备份", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d18_05", "fileName": "终端清单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d18_06", "fileName": "临时说明", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d18_01",
+          "fileName": "异常访问日志",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d18_02",
+          "fileName": "同步失败记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d18_03",
+          "fileName": "缓存目录索引",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d18_04",
+          "fileName": "审批消息备份",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d18_05",
+          "fileName": "终端清单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d18_06",
+          "fileName": "临时说明",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 19,
       "files": [
-        { "fileId": "d19_01", "fileName": "最终同步目录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d19_02", "fileName": "未发送报告", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d19_03", "fileName": "系统备份点", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d19_04", "fileName": "恢复说明", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d19_05", "fileName": "日志摘要", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d19_06", "fileName": "隐藏附件", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d19_01",
+          "fileName": "最终同步目录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d19_02",
+          "fileName": "未发送报告",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d19_03",
+          "fileName": "系统备份点",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d19_04",
+          "fileName": "恢复说明",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d19_05",
+          "fileName": "日志摘要",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d19_06",
+          "fileName": "隐藏附件",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     },
     {
       "day": 20,
       "files": [
-        { "fileId": "d20_01", "fileName": "最终档案", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d20_02", "fileName": "离职交接单", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d20_03", "fileName": "系统关闭记录", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d20_04", "fileName": "项目终版", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d20_05", "fileName": "个人总结", "shouldDelete": false, "spriteIndex": -1 },
-        { "fileId": "d20_06", "fileName": "未命名附件", "shouldDelete": false, "spriteIndex": -1 }
+        {
+          "fileId": "d20_01",
+          "fileName": "最终档案",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d20_02",
+          "fileName": "离职交接单",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d20_03",
+          "fileName": "系统关闭记录",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d20_04",
+          "fileName": "项目终版",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d20_05",
+          "fileName": "个人总结",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        },
+        {
+          "fileId": "d20_06",
+          "fileName": "未命名附件",
+          "shouldDelete": false,
+          "spriteIndex": -1
+        }
       ]
     }
   ]

@@ -40,6 +40,14 @@ namespace EmployeeHandbook.Browser
             SelectQuery();
         }
 
+        public void ConfigureClue(int configuredClueId, string configuredQueryText)
+        {
+            clueId = configuredClueId;
+
+            if (!string.IsNullOrWhiteSpace(configuredQueryText))
+                queryText = configuredQueryText;
+        }
+
         public void SelectQuery()
         {
             if (browserSearchController == null)

@@ -25,6 +25,14 @@ namespace EmployeeHandbook.NewsPopup
         [SerializeField] private Text bodyText;
         [SerializeField] private TMP_Text bodyTmpText;
         [SerializeField] private Button closeButton;
+        [SerializeField] private Button viewButton;
+        [SerializeField] private Button ignoreButton;
+
+        [Header("Detail Panel")]
+        [SerializeField] private GameObject detailPanel;
+        [SerializeField] private Text detailBodyText;
+        [SerializeField] private TMP_Text detailBodyTmpText;
+        [SerializeField] private Button detailCloseButton;
 
         [Header("Animation")]
         [SerializeField] private float slideDistance = 180f;
@@ -40,11 +48,13 @@ namespace EmployeeHandbook.NewsPopup
         private readonly HashSet<string> shownPopupIds = new HashSet<string>();
         private NewsPopupData currentPopup;
         private CanvasGroup canvasGroup;
+        private CanvasGroup detailCanvasGroup;
         private Coroutine delayRoutine;
         private Coroutine animationRoutine;
         private bool subscribedToGameManager;
         private Vector2 shownAnchoredPosition;
         private int scheduledDay = -1;
+        private bool currentPopupViewed;
 
         private void Awake()
         {
@@ -105,13 +115,27 @@ namespace EmployeeHandbook.NewsPopup
                 return;
             }
 
-            UnlockCloseClue(currentPopup);
             PlayOneShot(closeSound);
 
             if (animationRoutine != null)
                 StopCoroutine(animationRoutine);
 
             animationRoutine = StartCoroutine(HidePopup());
+        }
+
+        public void ViewPopupDetail()
+        {
+            if (currentPopup == null)
+                return;
+
+            SetDetailBody(currentPopup.body);
+            ShowDetailPanel();
+
+            if (!currentPopupViewed)
+            {
+                currentPopupViewed = true;
+                UnlockViewClue(currentPopup);
+            }
         }
 
         private IEnumerator ShowAfterDelay(NewsPopupData popup, float delay)
@@ -130,10 +154,13 @@ namespace EmployeeHandbook.NewsPopup
         private void ShowPopup(NewsPopupData popup)
         {
             currentPopup = popup;
+            currentPopupViewed = false;
             shownPopupIds.Add(GetPopupKey(popup));
             SetHeader(popup.tag);
             SetTitle(popup.title);
-            SetBody(popup.body);
+            SetBody(string.Empty);
+            SetDetailBody(popup.body);
+            HideDetailPanel();
             PlayOneShot(popupSound);
             Debug.Log("NewsPopupController 显示弹窗：" + GetPopupKey(popup), this);
 
@@ -176,7 +203,9 @@ namespace EmployeeHandbook.NewsPopup
             yield return AnimatePopup(popupPanel.anchoredPosition, hiddenPosition, canvasGroup.alpha, 0f, hideDuration);
 
             HideImmediately();
+            HideDetailPanel();
             currentPopup = null;
+            currentPopupViewed = false;
             animationRoutine = null;
         }
 
@@ -220,9 +249,10 @@ namespace EmployeeHandbook.NewsPopup
             canvasGroup.alpha = 0f;
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
+            HideDetailPanel();
         }
 
-        private void UnlockCloseClue(NewsPopupData popup)
+        private void UnlockViewClue(NewsPopupData popup)
         {
             if (popup == null || clueList == null || popup.clueIdOnClose <= 0)
                 return;
@@ -306,13 +336,73 @@ namespace EmployeeHandbook.NewsPopup
                 bodyTmpText.text = value;
         }
 
-        private void BindButtons()
+        private void SetDetailBody(string value)
         {
-            if (closeButton == null)
+            if (detailBodyText != null)
+                detailBodyText.text = value;
+
+            if (detailBodyTmpText != null)
+                detailBodyTmpText.text = value;
+        }
+
+        private void ShowDetailPanel()
+        {
+            if (detailPanel == null)
                 return;
 
-            closeButton.onClick.RemoveListener(ClosePopup);
-            closeButton.onClick.AddListener(ClosePopup);
+            if (!detailPanel.activeSelf)
+                detailPanel.SetActive(true);
+
+            EnsureDetailCanvasGroup();
+            if (detailCanvasGroup != null)
+            {
+                detailCanvasGroup.alpha = 1f;
+                detailCanvasGroup.interactable = true;
+                detailCanvasGroup.blocksRaycasts = true;
+            }
+        }
+
+        private void HideDetailPanel()
+        {
+            if (detailPanel == null)
+                return;
+
+            EnsureDetailCanvasGroup();
+            if (detailCanvasGroup != null)
+            {
+                detailCanvasGroup.alpha = 0f;
+                detailCanvasGroup.interactable = false;
+                detailCanvasGroup.blocksRaycasts = false;
+            }
+
+            detailPanel.SetActive(false);
+        }
+
+        private void BindButtons()
+        {
+            if (closeButton != null)
+            {
+                closeButton.onClick.RemoveListener(ClosePopup);
+                closeButton.onClick.AddListener(ClosePopup);
+            }
+
+            if (ignoreButton != null)
+            {
+                ignoreButton.onClick.RemoveListener(ClosePopup);
+                ignoreButton.onClick.AddListener(ClosePopup);
+            }
+
+            if (viewButton != null)
+            {
+                viewButton.onClick.RemoveListener(ViewPopupDetail);
+                viewButton.onClick.AddListener(ViewPopupDetail);
+            }
+
+            if (detailCloseButton != null)
+            {
+                detailCloseButton.onClick.RemoveListener(ClosePopup);
+                detailCloseButton.onClick.AddListener(ClosePopup);
+            }
         }
 
         private void SetupAudioSource()
@@ -366,6 +456,46 @@ namespace EmployeeHandbook.NewsPopup
                 if (close != null)
                     closeButton = close.GetComponent<Button>();
             }
+
+            if (viewButton == null)
+                viewButton = FindButton("查看");
+
+            if (ignoreButton == null)
+                ignoreButton = FindButton("忽略");
+
+            if (detailPanel == null)
+            {
+                Transform detail = transform.Find("DetailPanel");
+                if (detail == null)
+                    detail = transform.Find("详情");
+                if (detail == null)
+                    detail = transform.Find("内容详情");
+
+                if (detail != null)
+                    detailPanel = detail.gameObject;
+            }
+
+            if (detailPanel != null)
+            {
+                if (detailBodyTmpText == null)
+                    detailBodyTmpText = FindTmpTextIn(detailPanel.transform, "内容");
+
+                if (detailBodyText == null)
+                    detailBodyText = FindTextIn(detailPanel.transform, "内容");
+
+                if (detailCloseButton == null)
+                {
+                    Transform close = detailPanel.transform.Find("CloseButton");
+                    if (close != null)
+                        detailCloseButton = close.GetComponent<Button>();
+                }
+            }
+        }
+
+        private Button FindButton(string childName)
+        {
+            Transform child = transform.Find(childName);
+            return child != null ? child.GetComponentInChildren<Button>(true) : null;
         }
 
         private TMP_Text FindTmpText(string childName)
@@ -377,6 +507,24 @@ namespace EmployeeHandbook.NewsPopup
         private Text FindText(string childName)
         {
             Transform child = transform.Find(childName);
+            return child != null ? child.GetComponentInChildren<Text>(true) : null;
+        }
+
+        private TMP_Text FindTmpTextIn(Transform root, string childName)
+        {
+            if (root == null)
+                return null;
+
+            Transform child = root.Find(childName);
+            return child != null ? child.GetComponentInChildren<TMP_Text>(true) : null;
+        }
+
+        private Text FindTextIn(Transform root, string childName)
+        {
+            if (root == null)
+                return null;
+
+            Transform child = root.Find(childName);
             return child != null ? child.GetComponentInChildren<Text>(true) : null;
         }
 
@@ -397,6 +545,16 @@ namespace EmployeeHandbook.NewsPopup
             canvasGroup = popupPanel.GetComponent<CanvasGroup>();
             if (canvasGroup == null)
                 canvasGroup = popupPanel.gameObject.AddComponent<CanvasGroup>();
+        }
+
+        private void EnsureDetailCanvasGroup()
+        {
+            if (detailPanel == null)
+                return;
+
+            detailCanvasGroup = detailPanel.GetComponent<CanvasGroup>();
+            if (detailCanvasGroup == null)
+                detailCanvasGroup = detailPanel.AddComponent<CanvasGroup>();
         }
 
         private void StopDelay()

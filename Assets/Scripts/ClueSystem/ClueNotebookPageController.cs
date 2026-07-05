@@ -4,19 +4,29 @@ using UnityEngine.UI;
 namespace EmployeeHandbook.ClueSystem
 {
     /// <summary>
-    /// Simple notebook page switcher. Only one page is visible at a time.
-    /// Put page objects under Pages Root, or assign them manually in Pages.
+    /// Notebook page switcher. Only one page is visible at a time.
+    /// It supports tab buttons, while keeping old previous/next methods for compatibility.
     /// </summary>
     public class ClueNotebookPageController : MonoBehaviour
     {
         private const string DefaultPagesRootName = "Pages";
 
+        [Header("Pages")]
         [SerializeField] private Transform pagesRoot;
         [SerializeField] private GameObject[] pages;
         [SerializeField] private bool autoCollectPagesFromRoot = true;
+
+        [Header("Tabs")]
+        [SerializeField] private Button[] tabButtons;
+        [SerializeField] private GameObject[] selectedTabVisuals;
+        [SerializeField] private GameObject[] normalTabVisuals;
+        [SerializeField] private bool autoBindTabButtons = true;
+        [SerializeField] private bool activeTabNotInteractable = true;
+
+        [Header("Legacy Previous / Next")]
         [SerializeField] private Button previousButton;
         [SerializeField] private Button nextButton;
-        [SerializeField] private bool autoBindButtons = true;
+        [SerializeField] private bool autoBindPreviousNextButtons = true;
 
         private int currentPageIndex;
 
@@ -75,6 +85,7 @@ namespace EmployeeHandbook.ClueSystem
             }
 
             RefreshButtons();
+            RefreshTabs();
         }
 
         public void ShowPage(GameObject page)
@@ -146,7 +157,19 @@ namespace EmployeeHandbook.ClueSystem
 
         private void BindButtons()
         {
-            if (!autoBindButtons)
+            if (autoBindTabButtons && tabButtons != null)
+            {
+                for (int i = 0; i < tabButtons.Length; i++)
+                {
+                    int pageIndex = i;
+                    if (tabButtons[i] == null)
+                        continue;
+
+                    tabButtons[i].onClick.AddListener(() => ShowPageAtIndex(pageIndex));
+                }
+            }
+
+            if (!autoBindPreviousNextButtons)
                 return;
 
             if (previousButton != null)
@@ -159,6 +182,33 @@ namespace EmployeeHandbook.ClueSystem
             {
                 nextButton.onClick.RemoveListener(NextPage);
                 nextButton.onClick.AddListener(NextPage);
+            }
+        }
+
+        private void RefreshTabs()
+        {
+            if (tabButtons != null)
+            {
+                for (int i = 0; i < tabButtons.Length; i++)
+                {
+                    if (tabButtons[i] != null && activeTabNotInteractable)
+                        tabButtons[i].interactable = i != currentPageIndex;
+                }
+            }
+
+            SetVisualArrayActive(selectedTabVisuals, true);
+            SetVisualArrayActive(normalTabVisuals, false);
+        }
+
+        private void SetVisualArrayActive(GameObject[] visuals, bool selectedArray)
+        {
+            if (visuals == null)
+                return;
+
+            for (int i = 0; i < visuals.Length; i++)
+            {
+                if (visuals[i] != null)
+                    visuals[i].SetActive(selectedArray ? i == currentPageIndex : i != currentPageIndex);
             }
         }
 

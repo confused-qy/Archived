@@ -1,0 +1,316 @@
+{
+  "clues": [
+    {
+      "clueId": 1,
+      "name": "不要按那些键",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "别按那些按键"
+      ]
+    },
+    {
+      "clueId": 2,
+      "name": "员工转移",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "转移完成"
+      ]
+    },
+    {
+      "clueId": 3,
+      "name": "重复的入职表",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "重复入职的员工1"
+      ]
+    },
+    {
+      "clueId": 4,
+      "name": "创始人的初衷",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": []
+    },
+    {
+      "clueId": 5,
+      "name": "Boss的来历",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "Boss来历"
+      ]
+    },
+    {
+      "clueId": 6,
+      "name": "林乔",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "林乔线1"
+      ]
+    },
+    {
+      "clueId": 7,
+      "name": "稳定性复盘会议",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "稳定性复盘会",
+        "撤回的会议邀请1"
+      ]
+    },
+    {
+      "clueId": 8,
+      "name": "魏艾的资料",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "重复入职的员工2"
+      ]
+    },
+    {
+      "clueId": 9,
+      "name": "奇怪的文件夹",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "删不掉的文件夹1",
+        "临时缓存_勿删改"
+      ]
+    },
+    {
+      "clueId": 10,
+      "name": "林乔的意向",
+      "searchable": true,
+      "description": "LQ_Memory.txt 是一份疑似林乔私人记录的文本文件。记录里写到，她已经连续半年每天工作 14 个小时，会议、汇报和报表几乎挤占了所有生活。她明明还有房贷要还，也还有想完成的梦想，却已经累到开始把“重新开始”当成一种可能的解脱。文件最后提到，她正在犹豫是否签下某个协议：如果能够从现在的疲惫中脱身，即使需要付出代价，也许她愿意接受。",
+      "unlockClueIdOnSearch": 24,
+      "aliases": [
+        "LQ_Memory.txt",
+        "LQ_Memory",
+        "林乔线2"
+      ]
+    },
+    {
+      "clueId": 11,
+      "name": "C017-PreFit",
+      "searchable": true,
+      "description": "《魏艾适配记录——XVII 初筛报告》原本被错误投递到魏艾邮箱，随后被撤回。恢复出的附件名为 C017_PreFit，内容显示观察对象是 C-017，也就是魏艾。报告记录了当前压力值仍在观察中，公司信任度为待培养，并建议优先使用“福利沟通”策略，而不是直接展示完整授权条款。这说明魏艾并不是普通入职员工，而是已经被纳入观察和归档评估流程的对象。",
+      "unlockClueIdOnSearch": 30,
+      "aliases": [
+        "C017_PreFit",
+        "C-017 PreFit",
+        "C017 PreFit",
+        "适配记录2"
+      ]
+    },
+    {
+      "clueId": 12,
+      "name": "消失的补偿金",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": []
+    },
+    {
+      "clueId": 13,
+      "name": "C017归档缓存",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "删不掉的文件夹2",
+        "归档残留缓存"
+      ]
+    },
+    {
+      "clueId": 14,
+      "name": "稳定性复盘会会议纪要",
+      "searchable": true,
+      "description": "《稳定性复盘会会议纪要》的目录显示，这场会议并不是普通新人复盘。议题包括：是否将新人列入归档候选池，是否提前展示完整数据授权条款，以及如果对象继续追查，是否由主管出面安抚。最关键的是，专项治理项目组建议避免使用“诱导”字样，统一改成“福利沟通”。这说明公司内部清楚某些流程存在告知不足或引导性质，只是试图通过话术降低风险。",
+      "unlockClueIdOnSearch": 26,
+      "aliases": [
+        "稳定性复盘会议纪要",
+        "稳定性复盘会会议纪要.doc",
+        "撤回的会议邀请2"
+      ]
+    },
+    {
+      "clueId": 15,
+      "name": "补偿克扣",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": []
+    },
+    {
+      "clueId": 16,
+      "name": "专项治理项目组",
+      "searchable": true,
+      "description": "专项治理项目组在普通部门资料中几乎没有正式存在感：人员显示为 0，部门链路也不完整。但后台日志显示，它长期进行删除记录、修改档案、调整权限等操作。这个项目组更像是一个隐藏执行层，用来处理归档、权限、敏感文件和审计噪音。它不需要被大多数员工看见，却能影响大量员工档案和系统记录。",
+      "unlockClueIdOnSearch": 28,
+      "aliases": [
+        "专项治理组",
+        "治理项目组"
+      ]
+    },
+    {
+      "clueId": 17,
+      "name": "林乔的去向",
+      "searchable": true,
+      "description": "林乔的离职档案显示，她所在部门为 AI 训练组，离职原因写作“疗养计划完成”，档案状态为已归档。备注栏中的“无需联系家属”非常异常，说明公司已经默认她不会再以普通员工身份回到现实工作链路中。审批人为 Boss，审批意见为同意，这意味着林乔的去向并非普通离职，而是经过管理层确认的归档结果。",
+      "unlockClueIdOnSearch": 25,
+      "aliases": [
+        "林乔线5"
+      ]
+    },
+    {
+      "clueId": 18,
+      "name": "真假同事",
+      "searchable": true,
+      "description": "同事1的信息卡存在明显矛盾：聊天系统中他能持续联系魏艾，但员工档案里没有员工编号，没有入职日期，系统甚至提示记录不存在。他自称一直都在这里，却无法被普通人事系统验证。结合他反复提醒魏艾不要按奇怪的按钮，他更像是系统中的残留人格、观察节点，或某种被隐藏的内部引导者，而不是普通同事。",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "同事1",
+        "记录不存在的同事"
+      ]
+    },
+    {
+      "clueId": 19,
+      "name": "交互设计师魏艾",
+      "searchable": true,
+      "description": "《创始成员名单》显示，MonkeyAI 的人格建模负责人是林乔，而交互设计栏写着魏艾。这个信息直接冲突了魏艾当前的“应届毕业生入职”身份。如果魏艾只是新员工，她不应该出现在早期项目的创始名单里。更可能的情况是，魏艾曾经参与设计 MonkeyAI 的核心交互机制，后来被清除记忆并重新放回系统中测试。",
+      "unlockClueIdOnSearch": 29,
+      "aliases": [
+        "重复入职的员工3",
+        "交互设计 魏艾"
+      ]
+    },
+    {
+      "clueId": 20,
+      "name": "早期实验记录",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "P-001"
+      ]
+    },
+    {
+      "clueId": 21,
+      "name": "项目起源",
+      "searchable": true,
+      "description": "MonkeyAI 最初的立项目标并不是管理员工，也不是用于企业行为预测。项目立项书写明，它希望通过人格数字化技术保存人的意识，让离开的人仍然能够陪伴活着的人。早期愿景更接近医疗、记忆延续和情感陪伴。最后一页留下的“技术只是工具，真正值得保存的是人与人的联系”，说明项目最初带有理想主义色彩，后来才逐渐偏向公司管理与商业化应用。",
+      "unlockClueIdOnSearch": 27,
+      "aliases": [
+        "MonkeyAI项目起源",
+        "项目立项书"
+      ]
+    },
+    {
+      "clueId": 22,
+      "name": "商业化",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "MonkeyAI商业化"
+      ]
+    },
+    {
+      "clueId": 23,
+      "name": "第17轮",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "第十七轮"
+      ]
+    },
+    {
+      "clueId": 24,
+      "name": "林乔的归档申请",
+      "searchable": true,
+      "description": "归档系统待审核列表中，AR-10494 对应林乔，提交时间为 09:21，状态为系统预审通过。展开详情后可以看到，林乔的部门是风险控制部，岗位状态已经变为“转移完成”，申请类型为“归档确认”。这不是单纯的离职审批，而是公司内部对某个员工完成归档流程后的确认记录。林乔并不是突然消失，她是被系统正式处理过。",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "AR-10494",
+        "林乔线3"
+      ]
+    },
+    {
+      "clueId": 25,
+      "name": "林乔的轨迹",
+      "searchable": true,
+      "description": "历史台账中，C024 林乔的状态为“转移完成”，最后更新时间已锁定。展开历史轨迹后，系统显示她两年前入职，最近活跃状态为持续，归档触发时间由系统自动判定，当前状态为不可联系，并已同步至核心归档库。所谓“持续活跃”和“不可联系”同时存在，意味着林乔的某部分数据仍在系统中运行，但现实中的林乔已经无法被正常联系。",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "林乔线4",
+        "林乔转移",
+        "C024"
+      ]
+    },
+    {
+      "clueId": 26,
+      "name": "赞同派与反对派",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "内部分歧",
+        "撤回的会议邀请3"
+      ]
+    },
+    {
+      "clueId": 27,
+      "name": "开发者日志",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": []
+    },
+    {
+      "clueId": 28,
+      "name": "不存在的合规优化部",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "合规优化部"
+      ]
+    },
+    {
+      "clueId": 29,
+      "name": "我的故事？",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "我的故事",
+        "重复入职的员工4"
+      ]
+    },
+    {
+      "clueId": 30,
+      "name": "员工观察与归档",
+      "searchable": false,
+      "description": "",
+      "unlockClueIdOnSearch": 0,
+      "aliases": [
+        "员工观察与诱导",
+        "适配记录3"
+      ]
+    }
+  ]
+}

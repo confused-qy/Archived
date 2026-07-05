@@ -435,7 +435,8 @@
             {
               "text": "我以前到底是谁？",
               "bubbleSize": 3,
-              "next": ""
+              "next": "",
+              "unlockClueId": 21
             }
           ]
         }
@@ -480,7 +481,8 @@
           "text": "但是人终究是要向现实低头的。",
           "bubbleSize": 5,
           "delay": 1,
-          "next": ""
+          "next": "",
+          "unlockClueId": 22
         }
       ]
     },
@@ -534,7 +536,8 @@
           "text": "因为只有你，才知道应该怎样结束它。",
           "bubbleSize": 5,
           "delay": 1,
-          "next": ""
+          "next": "",
+          "unlockClueId": 23
         }
       ]
     },
@@ -594,7 +597,7 @@
     },
     {
       "conversationId": "day19_coworker_final_choice",
-      "unlockDay": 19,
+      "unlockDay": 18,
       "contactName": "同事1",
       "firstNodeId": "start",
       "nodes": [

@@ -15,6 +15,7 @@ namespace EmployeeHandbook.Browser
     {
         [SerializeField] private ClueNotebookController notebookController;
         [SerializeField] private ClueNotebookClueList clueList;
+        [SerializeField] private string clueDatabaseResourceName = ClueDatabase.DefaultResourceName;
         [FormerlySerializedAs("clueSearchEntries")]
         [SerializeField] private SearchEntry[] searchEntries;
         [SerializeField] private InputField queryInputField;
@@ -33,6 +34,12 @@ namespace EmployeeHandbook.Browser
         private int selectedClueId = -1;
         private string selectedQuery = "";
         private bool notebookOpenedByThisBrowser;
+        private ClueDatabaseData clueDatabase;
+
+        private void Awake()
+        {
+            clueDatabase = ClueDatabase.Load(clueDatabaseResourceName);
+        }
 
         private void OnEnable()
         {
@@ -71,10 +78,13 @@ namespace EmployeeHandbook.Browser
 
         public void SelectClue(int clueId)
         {
-            SearchEntry entry = FindEntryByClueId(clueId);
-            string query = entry != null && !string.IsNullOrWhiteSpace(entry.QueryText)
-                ? entry.QueryText
-                : GetFallbackQueryText(clueId);
+            ClueDefinition definition = ClueDatabase.FindById(clueDatabase, clueId);
+            SearchEntry entry = definition == null ? FindEntryByClueId(clueId) : null;
+            string query = definition != null && !string.IsNullOrWhiteSpace(definition.name)
+                ? definition.name
+                : entry != null && !string.IsNullOrWhiteSpace(entry.QueryText)
+                    ? entry.QueryText
+                    : GetFallbackQueryText(clueId);
 
             SelectQuery(clueId, query);
         }
@@ -106,11 +116,22 @@ namespace EmployeeHandbook.Browser
                 return;
             }
 
-            SearchEntry entry = selectedClueId > 0
-                ? FindEntryByClueId(selectedClueId)
-                : FindEntryByQuery(query);
+            ClueDefinition definition = selectedClueId > 0
+                ? ClueDatabase.FindById(clueDatabase, selectedClueId)
+                : ClueDatabase.FindByQuery(clueDatabase, query);
+            if (definition != null && !definition.searchable)
+            {
+                SetResultText(missingDescriptionMessage);
+                return;
+            }
 
-            string description = entry != null ? entry.Description : string.Empty;
+            SearchEntry entry = definition == null
+                ? selectedClueId > 0
+                    ? FindEntryByClueId(selectedClueId)
+                    : FindEntryByQuery(query)
+                : null;
+
+            string description = definition != null ? definition.description : entry != null ? entry.Description : string.Empty;
             if (string.IsNullOrWhiteSpace(description))
             {
                 SetResultText(missingDescriptionMessage);
@@ -118,6 +139,7 @@ namespace EmployeeHandbook.Browser
             }
 
             SetResultText(description);
+            UnlockClueFromSearch(definition);
         }
 
         public void ClearSelection()
@@ -217,6 +239,14 @@ namespace EmployeeHandbook.Browser
 
             if (resultTmpText != null)
                 resultTmpText.text = value;
+        }
+
+        private void UnlockClueFromSearch(ClueDefinition definition)
+        {
+            if (definition == null || definition.unlockClueIdOnSearch <= 0 || clueList == null)
+                return;
+
+            clueList.UnlockClue(definition.unlockClueIdOnSearch);
         }
 
         [System.Serializable]

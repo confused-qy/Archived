@@ -1,4 +1,5 @@
 using TMPro;
+using EmployeeHandbook.Browser;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,15 @@ namespace EmployeeHandbook.ClueSystem
     /// </summary>
     public class ClueNotebookClueList : MonoBehaviour
     {
+        [SerializeField] private string clueDatabaseResourceName = ClueDatabase.DefaultResourceName;
         [SerializeField] private ClueEntry[] clues;
         [SerializeField] private int[] initiallyUnlockedClueIds;
 
+        private ClueDatabaseData clueDatabase;
+
         private void Awake()
         {
+            clueDatabase = ClueDatabase.Load(clueDatabaseResourceName);
             CacheOriginalNames();
             LockAllClues();
             UnlockInitialClues();
@@ -50,6 +55,10 @@ namespace EmployeeHandbook.ClueSystem
 
         public string GetClueName(int clueId)
         {
+            ClueDefinition definition = ClueDatabase.FindById(clueDatabase, clueId);
+            if (definition != null && !string.IsNullOrWhiteSpace(definition.name))
+                return definition.name;
+
             ClueEntry clue = FindClue(clueId);
             return clue != null ? clue.OriginalName : string.Empty;
         }
@@ -75,6 +84,7 @@ namespace EmployeeHandbook.ClueSystem
             {
                 clues[i].AssignDefaultId(i + 1);
                 clues[i].CacheOriginalName();
+                clues[i].ApplyDefinition(ClueDatabase.FindById(clueDatabase, clues[i].ClueId));
             }
         }
 
@@ -147,6 +157,23 @@ namespace EmployeeHandbook.ClueSystem
                     originalName = clueButtonObject.name;
             }
 
+            public void ApplyDefinition(ClueDefinition definition)
+            {
+                if (definition == null)
+                {
+                    ApplyBrowserSelectButton(originalName);
+                    return;
+                }
+
+                if (!string.IsNullOrWhiteSpace(definition.name))
+                {
+                    originalName = definition.name;
+                    SetDisplayName(definition.name);
+                }
+
+                ApplyBrowserSelectButton(originalName);
+            }
+
             public void SetUnlocked(bool value)
             {
                 unlocked = value;
@@ -154,6 +181,31 @@ namespace EmployeeHandbook.ClueSystem
                 GameObject targetObject = GetTargetObject();
                 if (targetObject != null)
                     targetObject.SetActive(unlocked);
+            }
+
+            private void SetDisplayName(string value)
+            {
+                if (nameText != null)
+                    nameText.text = value;
+
+                if (nameTmpText != null)
+                    nameTmpText.text = value;
+            }
+
+            private void ApplyBrowserSelectButton(string queryText)
+            {
+                GameObject targetObject = GetTargetObject();
+                if (targetObject == null)
+                    return;
+
+                BrowserClueSelectButton selectButton = targetObject.GetComponent<BrowserClueSelectButton>();
+                if (selectButton == null)
+                    selectButton = targetObject.GetComponentInChildren<BrowserClueSelectButton>(true);
+
+                if (selectButton == null)
+                    return;
+
+                selectButton.ConfigureClue(clueId, queryText);
             }
 
             private GameObject GetTargetObject()

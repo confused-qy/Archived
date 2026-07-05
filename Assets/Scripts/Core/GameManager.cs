@@ -65,6 +65,12 @@ namespace EmployeeHandbook.DailyTasks
 
         private void Start()
         {
+            if (GameLaunchState.HasRequestedMode)
+            {
+                ApplyLaunchMode(GameLaunchState.ConsumeStartMode());
+                return;
+            }
+
             if (!autoContinueOrNewGame)
                 return;
 
@@ -79,6 +85,24 @@ namespace EmployeeHandbook.DailyTasks
                 ContinueGame();
             else
                 NewGame();
+        }
+
+        private void ApplyLaunchMode(GameStartMode mode)
+        {
+            if (mode == GameStartMode.NewGame)
+            {
+                SaveManager.DeleteSave();
+                NewGame();
+                return;
+            }
+
+            if (mode == GameStartMode.ContinueGame)
+            {
+                if (SaveManager.HasSave())
+                    ContinueGame();
+                else
+                    NewGame();
+            }
         }
 
         public void NewGame()
@@ -152,6 +176,26 @@ namespace EmployeeHandbook.DailyTasks
             SaveCurrentState();
             StateChanged?.Invoke();
             CheckEnding();
+        }
+
+        public void DebugJumpToDay(int day)
+        {
+            if (playerState == null)
+            {
+                playerState = new PlayerState();
+
+                if (playerState.completedTaskIds == null)
+                    playerState.completedTaskIds = new System.Collections.Generic.List<string>();
+            }
+
+            playerState.currentDay = Mathf.Clamp(day, 1, TotalGameDays);
+
+            InitializeTaskManager();
+            SaveCurrentState();
+            StateChanged?.Invoke();
+            CheckEnding();
+
+            Debug.Log("测试跳转到第 " + playerState.currentDay + " 天。");
         }
 
         private void SaveCurrentState()

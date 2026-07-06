@@ -289,51 +289,6 @@
       ]
     },
     {
-      "conversationId": "day11_boss_department_message",
-      "unlockDay": 11,
-      "contactName": "Boss",
-      "firstNodeId": "start",
-      "nodes": [
-        {
-          "id": "start",
-          "speaker": "other",
-          "text": "最近在看部门资料？",
-          "bubbleSize": 3,
-          "delay": 0.5,
-          "next": "choice_01"
-        },
-        {
-          "id": "choice_01",
-          "speaker": "choice",
-          "choices": [
-            {
-              "text": "工作需要。",
-              "bubbleSize": 2,
-              "next": "after_choice"
-            },
-            {
-              "text": "系统有错误",
-              "bubbleSize": 2,
-              "next": "after_choice"
-            },
-            {
-              "text": "我发现一个不存在的部门。",
-              "bubbleSize": 4,
-              "next": "after_choice"
-            }
-          ]
-        },
-        {
-          "id": "after_choice",
-          "speaker": "other",
-          "text": "那只是旧部门",
-          "bubbleSize": 2,
-          "delay": 1,
-          "next": ""
-        }
-      ]
-    },
-    {
       "conversationId": "day13_coworker_identity",
       "unlockDay": 13,
       "contactName": "同事1",

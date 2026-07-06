@@ -238,6 +238,8 @@ namespace EmployeeHandbook.Feishu
 
         public bool HasUnread(string contactName)
         {
+            RefreshDayOnly();
+
             if (conversations == null || string.IsNullOrWhiteSpace(contactName))
                 return false;
 
@@ -248,6 +250,30 @@ namespace EmployeeHandbook.Feishu
                     continue;
 
                 if (!IsConversationUnlocked(conversation))
+                    continue;
+
+                FeishuConversationRuntimeState state = GetOrCreateState(conversation);
+                if (!state.HasBeenOpened)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public bool HasAnyUnread()
+        {
+            RefreshDayOnly();
+
+            if (conversations == null || conversations.Length == 0)
+                LoadConversationData();
+
+            if (conversations == null)
+                return false;
+
+            for (int i = 0; i < conversations.Length; i++)
+            {
+                FeishuConversationData conversation = conversations[i];
+                if (conversation == null || !IsConversationUnlocked(conversation))
                     continue;
 
                 FeishuConversationRuntimeState state = GetOrCreateState(conversation);
@@ -285,6 +311,14 @@ namespace EmployeeHandbook.Feishu
             }
 
             conversations = collection.conversations;
+        }
+
+        private void RefreshDayOnly()
+        {
+            if (!useGameManagerDay || DailyGameManager.Instance == null || DailyGameManager.Instance.CurrentState == null)
+                return;
+
+            currentDay = Mathf.Max(1, DailyGameManager.Instance.CurrentState.currentDay);
         }
 
         private FeishuConversationData FindConversation(string conversationId)

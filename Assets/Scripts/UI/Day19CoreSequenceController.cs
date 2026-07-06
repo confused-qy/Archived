@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using EmployeeHandbook.UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -29,6 +30,11 @@ namespace EmployeeHandbook.DailyTasks
         [SerializeField] private float introSlideDuration = 1.2f;
         [SerializeField] private float slideFadeDuration = 0.25f;
 
+        [Header("BGM")]
+        [SerializeField] private BackgroundMusicController backgroundMusicController;
+        [SerializeField] private bool stopBgmWhenSequenceStarts = true;
+        [SerializeField] private float bgmFadeOutDuration = 1f;
+
         [Header("Choice Panel")]
         [SerializeField] private GameObject choicePanel;
         [SerializeField] private Text coreStatusText;
@@ -37,6 +43,14 @@ namespace EmployeeHandbook.DailyTasks
         [SerializeField] private Button closeInvestigationButton;
         [SerializeField] private Button reformButton;
         [SerializeField] private float choiceFadeDuration = 0.25f;
+
+        [Header("Choice Timeout Ending")]
+        [SerializeField] private bool enableChoiceTimeoutEnding = true;
+        [SerializeField] private float choiceTimeoutDuration = 10f;
+        [SerializeField] private int choiceBlinkCount = 8;
+        [SerializeField] private float choiceBlinkInterval = 0.12f;
+        [SerializeField] private string archiveConfirmButtonLabel = "重新确认所有归档协议";
+        [SerializeField] private float archiveConfirmLabelHoldDuration = 0.5f;
 
         [Header("Ending CG")]
         [SerializeField] private GameObject endingRoot;
@@ -47,12 +61,14 @@ namespace EmployeeHandbook.DailyTasks
         [SerializeField] private VideoClip exposeEndingVideo;
         [SerializeField] private VideoClip closeInvestigationEndingVideo;
         [SerializeField] private VideoClip reformEndingVideo;
+        [SerializeField] private VideoClip archiveConfirmEndingVideo;
         [SerializeField] private VideoClip fallbackEndingVideo;
         [SerializeField] private float endingVideoFadeInDuration = 0.25f;
         [SerializeField] private float endingVideoFadeOutDuration = 0.5f;
         [SerializeField] private GameObject[] exposeEndingSlides;
         [SerializeField] private GameObject[] closeInvestigationEndingSlides;
         [SerializeField] private GameObject[] reformEndingSlides;
+        [SerializeField] private GameObject[] archiveConfirmEndingSlides;
         [SerializeField] private GameObject[] fallbackEndingSlides;
         [SerializeField] private float endingSlideDuration = 1.5f;
 
@@ -78,6 +94,12 @@ namespace EmployeeHandbook.DailyTasks
         [SerializeField] private float creditsDuration = 22f;
         [SerializeField] private float creditsFadeInDuration = 0.35f;
 
+        [Header("Return To Scene")]
+        [SerializeField] private bool returnToSceneAfterEnding = true;
+        [SerializeField] private bool returnImmediatelyAfterEndingVideo = false;
+        [SerializeField] private string returnSceneName = "HomePage";
+        [SerializeField] private float returnSceneDelay = 0.5f;
+
         [Header("Events")]
         [SerializeField] private UnityEvent onSequenceStarted;
         [SerializeField] private UnityEvent onChoiceMade;
@@ -88,6 +110,10 @@ namespace EmployeeHandbook.DailyTasks
         private bool hasTriggered;
         private bool creditsScrollRectOriginalEnabled;
         private bool creditsScrollRectWasPrepared;
+        private Coroutine choiceTimeoutRoutine;
+        private string exposeButtonOriginalLabel;
+        private string closeInvestigationButtonOriginalLabel;
+        private string reformButtonOriginalLabel;
         private string selectedEndingId = string.Empty;
 
         public string SelectedEndingId
@@ -97,6 +123,7 @@ namespace EmployeeHandbook.DailyTasks
 
         private void Awake()
         {
+            CacheChoiceButtonLabels();
             HideSequenceUi();
             BindButtons();
         }
@@ -156,6 +183,7 @@ namespace EmployeeHandbook.DailyTasks
             if (startDelay > 0f)
                 yield return new WaitForSecondsRealtime(startDelay);
 
+            StopBgmIfNeeded();
             onSequenceStarted?.Invoke();
             HideDesktop();
             yield return PlayIntroSlides();
@@ -165,10 +193,17 @@ namespace EmployeeHandbook.DailyTasks
 
         private void ChooseEnding(string endingId)
         {
+            StopChoiceTimeout();
+            StartSelectedEnding(endingId);
+        }
+
+        private void StartSelectedEnding(string endingId)
+        {
             if (!string.IsNullOrEmpty(selectedEndingId))
                 return;
 
             selectedEndingId = endingId;
+            SetChoiceButtonsInteractable(false);
             onChoiceMade?.Invoke();
             StartCoroutine(ChooseEndingRoutine(endingId));
         }
@@ -193,9 +228,17 @@ namespace EmployeeHandbook.DailyTasks
                 yield return PlaySlides(endingRoot, slides, endingSlideDuration);
             }
 
+            if (returnImmediatelyAfterEndingVideo)
+            {
+                onEndingFinished?.Invoke();
+                yield return ReturnToSceneIfNeeded();
+                yield break;
+            }
+
             yield return PlayGameOverText(creditsRoot == null);
             yield return PlayCredits();
             onEndingFinished?.Invoke();
+            yield return ReturnToSceneIfNeeded();
         }
 
         private VideoClip GetEndingVideo(string endingId)
@@ -208,6 +251,9 @@ namespace EmployeeHandbook.DailyTasks
 
             if (endingId == "Reform" && reformEndingVideo != null)
                 return reformEndingVideo;
+
+            if (endingId == "ArchiveConfirm" && archiveConfirmEndingVideo != null)
+                return archiveConfirmEndingVideo;
 
             return fallbackEndingVideo;
         }
@@ -222,6 +268,9 @@ namespace EmployeeHandbook.DailyTasks
 
             if (endingId == "Reform" && reformEndingSlides != null && reformEndingSlides.Length > 0)
                 return reformEndingSlides;
+
+            if (endingId == "ArchiveConfirm" && archiveConfirmEndingSlides != null && archiveConfirmEndingSlides.Length > 0)
+                return archiveConfirmEndingSlides;
 
             return fallbackEndingSlides;
         }
@@ -504,6 +553,9 @@ namespace EmployeeHandbook.DailyTasks
             if (coreStatusTmpText != null)
                 coreStatusTmpText.text = text;
 
+            RestoreChoiceButtonLabels();
+            SetChoiceButtonsInteractable(true);
+
             choicePanel.SetActive(true);
             CanvasGroup group = GetOrAddCanvasGroup(choicePanel);
             group.interactable = false;
@@ -514,6 +566,8 @@ namespace EmployeeHandbook.DailyTasks
             group.alpha = 1f;
             group.interactable = true;
             group.blocksRaycasts = true;
+
+            StartChoiceTimeout();
         }
 
         private IEnumerator HideChoicePanel()
@@ -524,6 +578,7 @@ namespace EmployeeHandbook.DailyTasks
             CanvasGroup group = GetOrAddCanvasGroup(choicePanel);
             group.interactable = false;
             group.blocksRaycasts = false;
+            SetChoiceButtonsInteractable(false);
 
             yield return FadeCanvasGroup(group, group.alpha, 0f, choiceFadeDuration);
 
@@ -594,6 +649,8 @@ namespace EmployeeHandbook.DailyTasks
                 group.blocksRaycasts = false;
                 choicePanel.SetActive(false);
             }
+
+            StopChoiceTimeout();
 
             if (endingRoot != null)
             {
@@ -785,6 +842,179 @@ namespace EmployeeHandbook.DailyTasks
                 reformButton.onClick.RemoveListener(ChooseReform);
                 reformButton.onClick.AddListener(ChooseReform);
             }
+        }
+
+        private void StartChoiceTimeout()
+        {
+            StopChoiceTimeout();
+
+            if (!enableChoiceTimeoutEnding || choiceTimeoutDuration < 0f)
+                return;
+
+            choiceTimeoutRoutine = StartCoroutine(ChoiceTimeoutRoutine());
+        }
+
+        private void StopChoiceTimeout()
+        {
+            if (choiceTimeoutRoutine == null)
+                return;
+
+            StopCoroutine(choiceTimeoutRoutine);
+            choiceTimeoutRoutine = null;
+        }
+
+        private IEnumerator ChoiceTimeoutRoutine()
+        {
+            if (choiceTimeoutDuration > 0f)
+                yield return new WaitForSecondsRealtime(choiceTimeoutDuration);
+
+            if (!string.IsNullOrEmpty(selectedEndingId))
+            {
+                choiceTimeoutRoutine = null;
+                yield break;
+            }
+
+            SetChoiceButtonsInteractable(false);
+            yield return BlinkChoiceButtons();
+            SetAllChoiceButtonLabels(archiveConfirmButtonLabel);
+
+            if (archiveConfirmLabelHoldDuration > 0f)
+                yield return new WaitForSecondsRealtime(archiveConfirmLabelHoldDuration);
+
+            choiceTimeoutRoutine = null;
+            StartSelectedEnding("ArchiveConfirm");
+        }
+
+        private IEnumerator BlinkChoiceButtons()
+        {
+            Button[] buttons = GetChoiceButtons();
+            CanvasGroup[] groups = new CanvasGroup[buttons.Length];
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                if (buttons[i] == null)
+                    continue;
+
+                groups[i] = GetOrAddCanvasGroup(buttons[i].gameObject);
+            }
+
+            int blinkSteps = Mathf.Max(0, choiceBlinkCount) * 2;
+            for (int step = 0; step < blinkSteps; step++)
+            {
+                float alpha = step % 2 == 0 ? 0.25f : 1f;
+                for (int i = 0; i < groups.Length; i++)
+                {
+                    if (groups[i] != null)
+                        groups[i].alpha = alpha;
+                }
+
+                if (choiceBlinkInterval > 0f)
+                    yield return new WaitForSecondsRealtime(choiceBlinkInterval);
+            }
+
+            for (int i = 0; i < groups.Length; i++)
+            {
+                if (groups[i] != null)
+                    groups[i].alpha = 1f;
+            }
+        }
+
+        private void CacheChoiceButtonLabels()
+        {
+            exposeButtonOriginalLabel = GetButtonLabel(exposeButton);
+            closeInvestigationButtonOriginalLabel = GetButtonLabel(closeInvestigationButton);
+            reformButtonOriginalLabel = GetButtonLabel(reformButton);
+        }
+
+        private void RestoreChoiceButtonLabels()
+        {
+            SetButtonLabel(exposeButton, exposeButtonOriginalLabel);
+            SetButtonLabel(closeInvestigationButton, closeInvestigationButtonOriginalLabel);
+            SetButtonLabel(reformButton, reformButtonOriginalLabel);
+        }
+
+        private void SetAllChoiceButtonLabels(string label)
+        {
+            SetButtonLabel(exposeButton, label);
+            SetButtonLabel(closeInvestigationButton, label);
+            SetButtonLabel(reformButton, label);
+        }
+
+        private string GetButtonLabel(Button button)
+        {
+            if (button == null)
+                return string.Empty;
+
+            TMP_Text tmpText = button.GetComponentInChildren<TMP_Text>(true);
+            if (tmpText != null)
+                return tmpText.text;
+
+            Text text = button.GetComponentInChildren<Text>(true);
+            return text != null ? text.text : string.Empty;
+        }
+
+        private void SetButtonLabel(Button button, string label)
+        {
+            if (button == null)
+                return;
+
+            TMP_Text tmpText = button.GetComponentInChildren<TMP_Text>(true);
+            if (tmpText != null)
+                tmpText.text = label;
+
+            Text text = button.GetComponentInChildren<Text>(true);
+            if (text != null)
+                text.text = label;
+        }
+
+        private void SetChoiceButtonsInteractable(bool interactable)
+        {
+            Button[] buttons = GetChoiceButtons();
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                if (buttons[i] != null)
+                    buttons[i].interactable = interactable;
+            }
+        }
+
+        private Button[] GetChoiceButtons()
+        {
+            return new[] { exposeButton, closeInvestigationButton, reformButton };
+        }
+
+        private void StopBgmIfNeeded()
+        {
+            if (!stopBgmWhenSequenceStarts)
+                return;
+
+            if (backgroundMusicController == null)
+                backgroundMusicController = FindSceneObject<BackgroundMusicController>();
+
+            if (backgroundMusicController != null)
+                backgroundMusicController.StopWithFade(bgmFadeOutDuration);
+        }
+
+        private IEnumerator ReturnToSceneIfNeeded()
+        {
+            if (!returnToSceneAfterEnding || string.IsNullOrWhiteSpace(returnSceneName))
+                yield break;
+
+            if (returnSceneDelay > 0f)
+                yield return new WaitForSecondsRealtime(returnSceneDelay);
+
+            SceneTransitionController.LoadScene(returnSceneName);
+        }
+
+        private T FindSceneObject<T>() where T : Component
+        {
+            T[] objects = Resources.FindObjectsOfTypeAll<T>();
+            for (int i = 0; i < objects.Length; i++)
+            {
+                T item = objects[i];
+                if (item != null && item.gameObject.scene.IsValid())
+                    return item;
+            }
+
+            return null;
         }
 
         private void Subscribe()

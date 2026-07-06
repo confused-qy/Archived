@@ -241,6 +241,22 @@ namespace EmployeeHandbook.Email
             UnlockMailClueIfNeeded(mail);
         }
 
+        public bool HasUnreadUnlockedMail()
+        {
+            if (mails == null || mails.Length == 0)
+                LoadMails();
+
+            List<EmailMailData> unlockedMails = GetUnlockedMails();
+            for (int i = 0; i < unlockedMails.Count; i++)
+            {
+                EmailMailData mail = unlockedMails[i];
+                if (mail != null && !IsMailOpened(mail))
+                    return true;
+            }
+
+            return false;
+        }
+
         private void BindButtons()
         {
             if (loginButton != null)

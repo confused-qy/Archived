@@ -6,7 +6,7 @@
       "files": [
         {
           "fileId": "d03_01",
-          "fileName": "今日截图缓存",
+          "fileName": "临时截图缓存",
           "shouldDelete": true,
           "spriteIndex": -1
         },
@@ -24,7 +24,7 @@
         },
         {
           "fileId": "d03_04",
-          "fileName": "测试导出包",
+          "fileName": "临时测试导出包",
           "shouldDelete": true,
           "spriteIndex": -1
         },
@@ -263,7 +263,7 @@
       ]
     },
     {
-      "deleteFolderTaskName": "删除会议文件",
+      "deleteFolderTaskName": "删除旧会议文件",
       "useContainsMatch": false,
       "files": [
         {

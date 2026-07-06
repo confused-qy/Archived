@@ -538,7 +538,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 479638402}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.41894194
+  m_Size: 0.32476956
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -827,8 +827,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 488.13416, y: -595.775}
-  m_SizeDelta: {x: 916.2683, y: 1131.55}
+  m_AnchoredPosition: {x: 488.13416, y: -768.53}
+  m_SizeDelta: {x: 916.2683, y: 1477.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188928349
 MonoBehaviour:
@@ -850,19 +850,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=30><b>\u7B56\u5212\u56E2\u961F</b></size>\n\n<size=25><b>\u997C\u5E72
-    / \u4E3B\u7B56</b></size>\n<size=20>\u4ED6\u8D1F\u8D23\u628A\u8FD9\u4E2A\u9879\u76EE\u4ECE\u4E00\u4E2A\u60F3\u6CD5\u63A8\u5230\u53EF\u4EE5\u771F\u6B63\u843D\u5730\u7684\u5F62\u72B6\u3002\u4ECE\u56E2\u961F\u6C9F\u901A\u3001\u8FDB\u5EA6\u7EDF\u7B79\uFF0C\u5230\u73A9\u6CD5\u7CFB\u7EDF\u3001\u754C\u9762\u4EA4\u4E92\u3001\u4E8B\u4EF6\u62C6\u5206\u548C\u5267\u60C5\u8D70\u5411\uFF0C\u5979\u90FD\u6295\u5165\u4E86\u5927\u91CF\u7CBE\u529B\u3002\u5F88\u591A\u770B\u4F3C\u81EA\u7136\u53D1\u751F\u7684\u6D41\u7A0B\uFF0C\u80CC\u540E\u90FD\u662F\u5979\u53CD\u590D\u68B3\u7406\u3001\u4FEE\u6539\u548C\u786E\u8BA4\u540E\u7684\u7ED3\u679C\u3002\u5979\u4E5F\u53C2\u4E0E\u4E86\u5267\u60C5\u6587\u6848\u4E0E\u97F3\u6548\u8BBE\u8BA1\uFF0C\u8BA9\u8FD9\u4E2A\u6545\u4E8B\u4E0D\u53EA\u662F\u80FD\u88AB\u73A9\u5230\uFF0C\u4E5F\u80FD\u88AB\u66F4\u5B8C\u6574\u5730\u611F\u53D7\u5230\u3002</size>\n\n<size=25><b>\u6960\u795E
-    / \u7B56\u5212</b></size>\n<size=20>\u4ED6\u53C2\u4E0E\u4E86\u6700\u521D\u7684\u5267\u60C5\u5927\u7EB2\u8BBE\u8BA1\uFF0C\u4E5F\u4E3A\u5173\u952E\u5267\u60C5\u5206\u955C\u548C
-    CG \u8D44\u6E90\u6295\u5165\u4E86\u5F88\u591A\u5224\u65AD\u4E0E\u7B5B\u9009\u3002\u6E38\u620F\u4E2D\u90A3\u4E9B\u51B3\u5B9A\u6C1B\u56F4\u548C\u8282\u594F\u7684\u753B\u9762\uFF0C\u6709\u4E0D\u5C11\u6765\u81EA\u4ED6\u5BF9\u6545\u4E8B\u60C5\u7EEA\u7684\u628A\u63E1\u3002\u4ED6\u5E2E\u52A9\u56E2\u961F\u628A\u62BD\u8C61\u7684\u5267\u60C5\u65B9\u5411\u8F6C\u5316\u6210\u66F4\u660E\u786E\u7684\u89C6\u89C9\u8282\u70B9\uFF0C\u8BA9\u73A9\u5BB6\u80FD\u591F\u5728\u91CD\u8981\u65F6\u523B\u771F\u6B63\u8FDB\u5165\u6545\u4E8B\u3002</size>\n\n<size=25><b>\u6817\u5B50
-    / \u7B56\u5212</b></size>\n<size=20>\u5979\u53C2\u4E0E\u4E86\u5267\u60C5\u6587\u6848\u548C\u5206\u955C\u8868\u8FBE\u7684\u4F18\u5316\uFF0C\u8BA9\u8BB8\u591A\u539F\u672C\u76F4\u767D\u7684\u5185\u5BB9\u53D8\u5F97\u66F4\u987A\u7545\u3001\u66F4\u8D34\u8FD1\u89D2\u8272\u5904\u5883\u3002\u5979\u5173\u6CE8\u7684\u662F\u73A9\u5BB6\u8BFB\u5230\u4E00\u53E5\u8BDD\u3001\u770B\u5230\u4E00\u4E2A\u573A\u666F\u65F6\u7684\u611F\u53D7\uFF0C\u4E5F\u5E2E\u52A9\u6545\u4E8B\u5728\u7EC6\u8282\u4E0A\u53D8\u5F97\u66F4\u67D4\u8F6F\u3001\u66F4\u6E05\u6670\u3002\u5F88\u591A\u6587\u5B57\u6700\u7EC8\u80FD\u7559\u4E0B\u4F59\u5473\uFF0C\u90FD\u79BB\u4E0D\u5F00\u5979\u7684\u8C03\u6574\u3002</size>\n\n\n<size=30><b>\u843D\u5730\u5F00\u53D1\u56E2\u961F</b></size>\n\n<size=25><b>Violet
-    / \u4E3B\u7A0B</b></size>\n<size=20>\u5979\u8D1F\u8D23\u5C06\u6240\u6709\u8BBE\u8BA1\u3001\u5267\u60C5\u548C\u4EA4\u4E92\u771F\u6B63\u63A5\u5165
-    Unity \u9879\u76EE\u4E2D\u3002\u4ECE\u684C\u9762\u7A97\u53E3\u3001\u65F6\u95F4\u4E0E\u4EFB\u52A1\u7CFB\u7EDF\uFF0C\u5230\u98DE\u4E66\u3001\u90AE\u7BB1\u3001\u6D4F\u89C8\u5668\u3001\u7B14\u8BB0\u672C\u3001\u7535\u8BDD\u7B49\u6838\u5FC3\u754C\u9762\uFF0C\u518D\u5230
-    Word\u3001Excel\u3001\u4E91\u76D8\u5220\u9664\u7B49\u5C0F\u6E38\u620F\uFF0C\u5979\u5B8C\u6210\u4E86\u9879\u76EE\u4E2D\u4E3B\u8981\u7684\u7A0B\u5E8F\u5B9E\u73B0\u3002\u5979\u4E5F\u8D1F\u8D23\u7EBF\u7D22\u89E3\u9501\u3001\u6570\u636E\u5E93\u641C\u7D22\u3001\u6BCF\u65E5\u4E8B\u4EF6\u3001\u8F6C\u573A
-    CG\u3001\u97F3\u6548\u89E6\u53D1\u548C\u5927\u91CF\u72B6\u6001\u7EC6\u8282\u7684\u63A5\u5165\u4E0E\u4FEE\u590D\u3002\u8FD9\u4E2A\u6E38\u620F\u6700\u7EC8\u80FD\u591F\u88AB\u5B8C\u6574\u5730\u73A9\u8D77\u6765\uFF0C\u79BB\u4E0D\u5F00\u5979\u5728\u5DE5\u7A0B\u843D\u5730\u4E0A\u7684\u6301\u7EED\u63A8\u8FDB\u3002</size>\n\n\n<size=30><b>\u7F8E\u672F\u56E2\u961F</b></size>\n\n<size=25><b>\u82BD\u9E26
-    / \u7F8E\u672F</b></size>\n<size=20>\u5979\u4E3A\u6E38\u620F\u642D\u5EFA\u4E86\u8BB8\u591A\u73A9\u5BB6\u6700\u5148\u63A5\u89E6\u5230\u7684\u89C6\u89C9\u5370\u8C61\uFF0C\u5305\u62EC\u4E3B\u754C\u9762\u3001\u8BB0\u4E8B\u672C\u7CFB\u7EDF\u548C\u591A\u4E2A\u4EA4\u4E92\u83DC\u5355\u754C\u9762\u3002Word\u3001Excel\u3001\u65E5\u5386\u3001\u624B\u673A\u7B49\u754C\u9762\u7684\u8BBE\u8BA1\uFF0C\u4E5F\u8BA9\u6E38\u620F\u4E2D\u7684\u201C\u5DE5\u4F5C\u201D\u53D8\u5F97\u66F4\u6709\u771F\u5B9E\u611F\u548C\u53EF\u89E6\u6478\u611F\u3002\u9664\u6B64\u4E4B\u5916\uFF0C\u5979\u8FD8\u5B8C\u6210\u4E86\u6E38\u620F
-    logo \u4E0E icon\uFF0C\u4E3A\u4F5C\u54C1\u7559\u4E0B\u4E86\u6E05\u6670\u7684\u89C6\u89C9\u6807\u8BC6\u3002</size>\n\n<size=25><b>\u6D63
-    / \u7F8E\u672F</b></size>\n<size=20>\u5979\u627F\u62C5\u4E86\u5927\u91CF\u8F6F\u4EF6\u754C\u9762\u7684\u89C6\u89C9\u8BBE\u8BA1\uFF0C\u5305\u62EC\u98DE\u4E66\u3001\u6D4F\u89C8\u5668\u3001\u90AE\u7BB1\u4E4B\u5916\u7684\u591A\u4E2A\u529E\u516C\u7CFB\u7EDF\u9875\u9762\uFF0C\u4EE5\u53CA\u8F6F\u4EF6\u56FE\u6807\u3001\u767B\u5F55\u9875\u9762\u3001\u5F39\u7A97\u3001\u4ECA\u65E5\u4EFB\u52A1\u83DC\u5355\u548C\u5BF9\u8BDD\u6846\u7B49\u5185\u5BB9\u3002\u5979\u8BA9\u8FD9\u4E9B\u754C\u9762\u65E2\u50CF\u73A9\u5BB6\u719F\u6089\u7684\u529E\u516C\u5DE5\u5177\uFF0C\u53C8\u4FDD\u7559\u4E86\u6E38\u620F\u81EA\u5DF1\u7684\u6C14\u8D28\u3002\u5BA3\u4F20\u56FE\u7684\u8BBE\u8BA1\u4E5F\u5E2E\u52A9\u8FD9\u4E2A\u4F5C\u54C1\u5728\u7B2C\u4E00\u773C\u5C31\u4F20\u8FBE\u51FA\u5B83\u7684\u4E3B\u9898\u4E0E\u6C1B\u56F4\u3002</size>\n\n<size=25><b>masa
-    / \u7F8E\u672F</b></size>\n<size=20>\u5979\u8D1F\u8D23\u73A9\u5BB6\u4EBA\u7269\u7ACB\u7ED8\u3001\u4EBA\u7269\u5934\u50CF\u548C\u7ED3\u5C40\u80CC\u666F\u7B49\u5173\u952E\u89C6\u89C9\u5185\u5BB9\uFF0C\u4E5F\u53C2\u4E0E\u4E86\u90AE\u7BB1\u754C\u9762\u7684\u8BBE\u8BA1\u3002\u5979\u7684\u5DE5\u4F5C\u8BA9\u89D2\u8272\u4E0D\u518D\u53EA\u662F\u6587\u672C\u4E2D\u7684\u540D\u5B57\uFF0C\u800C\u662F\u6709\u4E86\u53EF\u4EE5\u88AB\u8BB0\u4F4F\u7684\u5F62\u8C61\u3002\u5C24\u5176\u5728\u7ED3\u5C40\u76F8\u5173\u753B\u9762\u4E2D\uFF0C\u5979\u4E3A\u6545\u4E8B\u6700\u540E\u7684\u60C5\u7EEA\u843D\u70B9\u63D0\u4F9B\u4E86\u91CD\u8981\u7684\u89C6\u89C9\u652F\u6491\u3002</size>"
+  m_text: "<size=35><b>\u7B56\u5212\u56E2\u961F</b></size>\n\n<size=30><b>\u997C\u5E72
+    / \u4E3B\u7B56</b></size>\n<size=25>\u9996\u5148\u5F88\u9AD8\u5174\u5728\u8D85\u9AD8\u6548\u8D85\u4F1A\u753B\u7684\u7F8E\u672F\u8001\u5E08\u4EEC\u3001\u7A76\u6781\u9760\u8C31\u7684\u7A0B\u5E8F\u8001\u5E08\u3001\u582A\u6BD4\u5DE6\u8180\u53F3\u81C2\u7684\u7B56\u5212\u8001\u5E08\u4EEC\u7684\u5408\u4F5C\u4E0E\u5E2E\u52A9\u4E0B\uFF01\uFF01\uFF01\u987A\u5229\u5236\u4F5C\u51FA\u4E86\u8FD9\u6B3E\u6E90\u81EA\u8111\u6D1E\u5927\u7206\u53D1\u7684\u6E38\u620F(
+    \u2022\u0300 v \u2022\u0301 )\u80FD\u73A9\u5230\u6700\u540E\u770B\u5230\u8FD9\u6BB5\u8BDD\uFF0C\u4E5F\u975E\u5E38\u611F\u8C22\u60A8\u7684\u8010\u5FC3\u548C\u559C\u6B22\uFF0C\u867D\u7136\u6E38\u620F\u4E2D\u9B4F\u827E\u7684\u9009\u62E9\u5E76\u4E0D\u7B97\u591A\u4E5F\u4E0D\u4E00\u5B9A\u662F\u6700\u4F18\u89E3\uFF0C\u4F46\u5C4F\u5E55\u524D\u7684\u4F60\uFF0C\u4E00\u5B9A\u80FD\u5728\u5C5E\u4E8E\u81EA\u5DF1\u7684\u6863\u6848\u4E2D\uFF0C\u907F\u5F00\u90A3\u4E9B\u9519\u8BEF\u7684\u6309\u952E\uFF0C\u6700\u7EC8\u627E\u5230\u5E76\u6309\u4E0B\u6700\u5173\u952E\u7684\u90A3\u4E00\u4E2A\uFF0C\u90A3\u4E48\uFF0C\u795D\u5404\u4F4D\u65E9\u5B89\u3001\u5348\u5B89\u3001\u665A\u5B89\uFF01</size>\n\n<size=30><b>GodNan
+    / \u7B56\u5212</b></size>\n<size=25>\u5927\u6982\u662F\u4E00\u4E2A\u5934\u8111\u53D1\u70ED\u7684\u5973\u5B69\u9047\u5230\u4E86\u4E00\u4E2A\u5F88\u597D\u7684\u56E2\u961F\uFF0C\u5728\u5934\u8111\u98CE\u66B4\u548C\u4E92\u76F8\u9F13\u52B1\u4E0B\uFF0C\u77ED\u77ED\u768421\u5929\u5C45\u7136\u521B\u9020\u51FA\u4E86\u8FD9\u4E48\u5B8C\u6574\u7684\u6E38\u620F\uFF0C\u5DE7\u5408\u7684\u662F\uFF0C\u6211\u4EEC\u7684\u6E38\u620F\u5929\u6570\u5C45\u7136\u53EA\u548C\u8D5B\u7A0B\u76F8\u5DEE\u4E00\u5929\uFF0C\u90A3\u76F8\u5DEE\u7684\u4E00\u5929\u4E0D\u5C31\u662F\u73B0\u5B9E\u751F\u6D3B\u91CC\uFF0C\u6211\u4EEC\u76F8\u9047\u7684\u65E5\u5B50\uFF01\u54AA\u7684\u5929\uFF0C\u795D\u613F\u73A9\u6E38\u620F\u7684\u5404\u4F4D\u5728\u751F\u6D3B\u4E2D\u4E5F\u80FD\u9047\u5230\u8FD9\u4E48\u597D\u7684\u56E2\u961FOvO\u3002And
+    \u65E0\u8BBA\u9009\u62E9\u4EC0\u4E48\u6837\u7684\u7ED3\u5C40\uFF0C\u9B4F\u827E\u6CA1\u6709\u505A\u9519\uFF0C\u4F60\u4E5F\u6CA1\u6709\uFF0C\u8981\u76F8\u4FE1\u81EA\u5DF1\u7684\u4EFB\u4F55\u51B3\u5B9A\u5440\uFF01\uFF01\u90A3\u6211\u4EEC\u4E0B\u6B21\u518D\u89C1\uFF01</size>\n\n<size=30><b>\u6817\u5B50
+    / \u7B56\u5212</b></size>\n<size=25>\u611F\u8C22\u60A8\u7684\u6E38\u73A9  \u300A\u5F52\u6863\u300B\u56E0\u4E3A\u60A8\u7684\u6BCF\u4E00\u6B21\u9009\u62E9\u53D8\u5F97\u751F\u52A8\u800C\u9C9C\u6D3B
+    \u5E0C\u671B\u8FD9\u90E8\u6E38\u620F\u6709\u4E3A\u67AF\u71E5\u5E73\u6DE1\u7684\u751F\u6D3B\u5E26\u6765\u4E00\u4E1D\u4E50\u8DA3
+    \u867D\u7136\u6E38\u620F\u4F1A\u5F52\u6863 \u4F46\u4EBA\u751F\u7684\u6545\u4E8B
+    \u6C38\u8FDC\u5728\u8BFB\u6863\u4E2D \n\u613F\u4E00\u5207\u987A\u9042\uFF01</size>\n\n\n<size=35><b>\u843D\u5730\u5F00\u53D1\u56E2\u961F</b></size>\n\n<size=30><b>Violet
+    / \u4E3B\u7A0B</b></size>\n<size=25>\u611F\u8C22\u56E2\u961F\u91CC\u6BCF\u4E00\u4E2A\u4F19\u4F34\uFF0C\u611F\u8C22\u5C3D\u5FC3\u5C3D\u529B\u7684\u7B56\u5212\uFF0C\u611F\u8C22\u7EDD\u7F8E\u7684\u7F8E\u672F\uFF0C\u4E5F\u611F\u8C22\u52AA\u529B\u901A\u5BB5\u4E86\u51E0\u5929\uFF0C\u7B2C\u4E00\u6B21\u5B8C\u6574\u5B8C\u6210\u4E00\u4E2A\u6E38\u620F\u5168\u90E8\u529F\u80FD\u90E8\u7F72\u7684\u81EA\u5DF1\u3002\n\u8C22\u8C22\u4F60\uFF0C\u4EB2\u7231\u7684\u73A9\u5BB6\uFF0C\u8C22\u8C22\u4F60\u613F\u610F\u73A9\u8FD9\u4E2A\u7B80\u964B\u7684\u5C0F\u6E38\u620F\u3002</size>\n\n\n<size=35><b>\u7F8E\u672F\u56E2\u961F</b></size>\n\n<size=30><b>\u82BD\u9E26
+    / \u7F8E\u672F</b></size>\n<size=25>\u4E0A\u73ED\u6109\u5FEB\u25CFv\u25CF\u5236\u9020\u5783\u573E\u5F00\u5FC3\u5417</size>\n\n<size=30><b>eionssion
+    / \u7F8E\u672F</b></size>\n<size=25>\u795D\u5927\u5BB6\u73A9\u5F97\u9AD8\u5174</size>\n\n<size=30><b>masa
+    / \u7F8E\u672F</b></size>\n<size=25>\u554A\u554A\u554A\u554A\u73A9\u7684\u6109\u5FEB\uFF01</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 438356001b50b4855b3639e5f40c6175, type: 2}
   m_sharedMaterial: {fileID: -4743321220339924390, guid: 438356001b50b4855b3639e5f40c6175, type: 2}
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 20
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1375,7 +1375,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 1191.55}
+  m_SizeDelta: {x: 0, y: 1537.06}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &424060941
 MonoBehaviour:
@@ -1449,7 +1449,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1019286579}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.581058}
+  m_AnchorMin: {x: 0, y: 0.67523044}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -2201,7 +2201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81, y: -68}
+  m_AnchoredPosition: {x: 78, y: 0}
   m_SizeDelta: {x: 1404.4272, y: 609.1192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834404086
@@ -2317,6 +2317,7 @@ GameObject:
   - component: {fileID: 861834428}
   - component: {fileID: 861834427}
   - component: {fileID: 861834426}
+  - component: {fileID: 861834430}
   m_Layer: 5
   m_Name: "\u7EE7\u7EED\u6E38\u620F"
   m_TagString: Untagged
@@ -2452,6 +2453,103 @@ RectTransform:
   m_AnchoredPosition: {x: 361.30396, y: -55.6}
   m_SizeDelta: {x: 410.6225, y: 93.4263}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &861834430
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861834425}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: e3a4e9769529343148bdfd7cc5a31996, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1019286578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,17 +3715,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658817416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.00032459936, y: -0.04696037, z: 0.006904409, w: 0.9988729}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 652879713}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.074, y: -5.383, z: 0.789}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -520, y: 47}
-  m_SizeDelta: {x: 338.2938, y: 222.6966}
+  m_AnchoredPosition: {x: -536, y: 62}
+  m_SizeDelta: {x: 357.0583, y: 195.856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1658817418
 MonoBehaviour:
@@ -3642,14 +3740,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.59011215, g: 0.6849261, b: 0.8396226, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1464825594466071844, guid: 4df421050fa8c4e18979964a39802994, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

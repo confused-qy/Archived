@@ -15,6 +15,10 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+# Local video assets (keep them out of Git and avoid orphaned Unity metadata)
+*.mp4
+*.mp4.meta
+
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
 *.blend1.meta
